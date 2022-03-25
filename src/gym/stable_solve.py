@@ -11,25 +11,24 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+import torch
 import gym
 import network_sim
 import tensorflow as tf
 
 from stable_baselines.common.policies import MlpPolicy
-from stable_baselines.common.policies import FeedForwardPolicy
-from stable_baselines import PPO1
+# from stable_baselines3.common.policies import FeedForwardPolicy
+from stable_baselines3.common.torch_layers import MlpExtractor
+from stable_baselines3 import PPO
+from stable_baselines3.common.policies import ActorCriticPolicy
 import os
 import sys
 import inspect
-from datetime import datetime
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
-sys.path.insert(0,parentdir) 
+sys.path.insert(0,parentdir)
 from common.simple_arg_parse import arg_or_default
 
-
-time = f'{datetime.now().strftime("%Y-%m-%d-%H:%M:%S")}'
 arch_str = arg_or_default("--arch", default="32,16")
 if arch_str == "":
     arch = []
@@ -39,55 +38,75 @@ print("Architecture is: %s" % str(arch))
 
 training_sess = None
 
-class MyMlpPolicy(FeedForwardPolicy):
+# class MyMlpPolicy(FeedForwardPolicy):
+#
+#     def __init__(self, sess, ob_space, ac_space, n_env, n_steps, n_batch, reuse=False, **_kwargs):
+#         super(MyMlpPolicy, self).__init__(sess, ob_space, ac_space, n_env, n_steps, n_batch, reuse, net_arch=[{"pi":arch, "vf":arch}],
+#                                         feature_extraction="mlp", **_kwargs)
+#         global training_sess
+#         training_sess = sess
+class MyMlpPolicy(MlpExtractor):
 
-    def __init__(self, sess, ob_space, ac_space, n_env, n_steps, n_batch, reuse=False, **_kwargs):
-        super(MyMlpPolicy, self).__init__(sess, ob_space, ac_space, n_env, n_steps, n_batch, reuse, net_arch=[{"pi":arch, "vf":arch}],
-                                        feature_extraction="mlp", **_kwargs)
-        global training_sess
-        training_sess = sess
-
+    def __init__(self,feature_dim, net_arch:[{"pi":arch, "vf":arch}],activation_fn,device:"auto",**_kwargs):
+        super(MyMlpPolicy, self).__init__(self,feature_dim,net_arch,activation_fn,device,**_kwargs)
+        # global training_sess
+        # training_sess = sess
 env = gym.make('PccNs-v0')
 #env = gym.make('CartPole-v0')
 
 gamma = arg_or_default("--gamma", default=0.99)
 print("gamma = %f" % gamma)
-model = PPO1(MyMlpPolicy, env, verbose=1, schedule='constant', timesteps_per_actorbatch=8192, optim_batchsize=2048, gamma=gamma)
+policy_kwargs = dict(net_arch=[{"pi":arch, "vf":arch}])
+model = PPO("MlpPolicy",env,policy_kwargs=policy_kwargs, verbose=1, n_steps=8192, batch_size=2048, gamma=gamma,use_sde=False)
+# model = PPO(MyMlpPolicy, env, verbose=1, schedule ='constant', timesteps_per_actorbatch=8192, optim_batchsize=2048, gamma=gamma)
+# for i in range(0, 1):
+for i in range(0, 1):
+    # with model.graph.as_default():
+        # saver = tf.train.Saver()
+        # saver.save(training_sess, "./pcc_model_%d.ckpt" % i)
 
-for i in range(0, 6):
-    with model.graph.as_default():                                                                   
-        saver = tf.train.Saver()                                                                     
-        saver.save(training_sess, "./pcc_model_%d.ckpt" % i)
-    model.learn(total_timesteps=(1600 * 410))
-
+    model.learn(total_timesteps=(16 * 41))
+    # model.learn(total_timesteps=(16 * 410))
+# Specify a path
+PATH = "entire_model.pt"
+# Save
+torch.save(model.policy.state_dict(), PATH)
+# loader = tf.train.import_meta_graph('./outdir/pcc_model_1.ckpt.meta')
+# loader.restore(training_sess,tf.train.latest_checkpoint('./outdir/pcc_model_1.ckpt.data-00000-of-00001'))
+# print("loader", loader)
 ##
 #   Save the model to the location specified below.
 ##
-default_export_dir = f"log/{time}"
+# default_export_dir = "pcc_saved_models"
+default_export_dir = "tmp"
 export_dir = arg_or_default("--model-dir", default=default_export_dir)
-with model.graph.as_default():
+print("export_dir",export_dir)
 
-    pol = model.policy_pi#act_model
 
-    obs_ph = pol.obs_ph
-    act = pol.deterministic_action
-    sampled_act = pol.action
 
-    obs_input = tf.saved_model.utils.build_tensor_info(obs_ph)
-    outputs_tensor_info = tf.saved_model.utils.build_tensor_info(act)
-    stochastic_act_tensor_info = tf.saved_model.utils.build_tensor_info(sampled_act)
-    signature = tf.saved_model.signature_def_utils.build_signature_def(
-        inputs={"ob":obs_input},
-        outputs={"act":outputs_tensor_info, "stochastic_act":stochastic_act_tensor_info},
-        method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME)
-
-    #"""
-    signature_map = {tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY:
-                     signature}
-
-    model_builder = tf.saved_model.builder.SavedModelBuilder(export_dir)
-    model_builder.add_meta_graph_and_variables(model.sess,
-        tags=[tf.saved_model.tag_constants.SERVING],
-        signature_def_map=signature_map,
-        clear_devices=True)
-    model_builder.save(as_text=True)
+# with model.graph.as_default():
+#
+#     pol = model.policy_pi#act_model
+#
+#     obs_ph = pol.obs_ph #Tensor
+#     act = pol.deterministic_action
+#     sampled_act = pol.action
+#
+#     obs_input = tf.saved_model.utils.build_tensor_info(obs_ph)
+#     outputs_tensor_info = tf.saved_model.utils.build_tensor_info(act)
+#     stochastic_act_tensor_info = tf.saved_model.utils.build_tensor_info(sampled_act)
+#     signature = tf.saved_model.signature_def_utils.build_signature_def(
+#         inputs={"ob":obs_input},
+#         outputs={"act":outputs_tensor_info, "stochastic_act":stochastic_act_tensor_info},
+#         method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME)
+#
+#     #"""
+#     signature_map = {tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY:
+#                      signature}
+#
+#     model_builder = tf.saved_model.builder.SavedModelBuilder(export_dir)
+#     model_builder.add_meta_graph_and_variables(model.sess,
+#         tags=[tf.saved_model.tag_constants.SERVING],
+#         signature_def_map=signature_map,
+#         clear_devices=True)
+#     model_builder.save(as_text=True)
