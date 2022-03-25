@@ -1,0 +1,4 @@
+src/gym/*.json
+src/gym/*.png
+src/gym/*.meta
+src/gym/*.index

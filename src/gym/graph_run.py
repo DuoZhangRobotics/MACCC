@@ -57,5 +57,6 @@ loss_axis.plot(time_data, loss_data)
 loss_axis.set_ylabel("Loss Rate")
 loss_axis.set_xlabel("Monitor Interval")
 
-fig.suptitle("Summary Graph for %s" % sys.argv[1])
-fig.savefig("env_graph.pdf")
+title = "Summary Graph with No Cwnd for Low Latency(Upper bound)"
+fig.suptitle(title)
+fig.savefig(f"{title}.png", dpi=500)

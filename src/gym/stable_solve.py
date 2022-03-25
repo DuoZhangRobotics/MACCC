@@ -22,11 +22,14 @@ from stable_baselines import PPO1
 import os
 import sys
 import inspect
+from datetime import datetime
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0,parentdir) 
 from common.simple_arg_parse import arg_or_default
 
+
+time = f'{datetime.now().strftime("%Y-%m-%d-%H:%M:%S")}'
 arch_str = arg_or_default("--arch", default="32,16")
 if arch_str == "":
     arch = []
@@ -60,7 +63,7 @@ for i in range(0, 6):
 ##
 #   Save the model to the location specified below.
 ##
-default_export_dir = "/tmp/pcc_saved_models/model_A/"
+default_export_dir = f"log/{time}"
 export_dir = arg_or_default("--model-dir", default=default_export_dir)
 with model.graph.as_default():
 

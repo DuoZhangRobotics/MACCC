@@ -1,0 +1,19 @@
+name: networks
+channels:
+  - defaults
+dependencies:
+  - python=3.7
+  - nvidia::cudatoolkit=11.1
+  - pytorch::pytorch  
+  - numpy
+  - pip
+  - pip:
+    - MakeTreeDir
+    - mujoco-py
+    - imageio-ffmpeg
+    - Pillow
+    - wandb
+    - gym
+    - stable-baselines3[extra]
+    - tensorflow-gpu==1.15
+    - stable-baselines[mpi]
