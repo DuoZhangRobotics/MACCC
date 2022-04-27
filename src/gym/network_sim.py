@@ -47,12 +47,14 @@ BYTES_PER_PACKET = 1500
 
 LATENCY_PENALTY = 1.0
 LOSS_PENALTY = 1.0
-MAX_LATENCY = 0.01
+MAX_LATENCY = 0.1
 
 USE_LATENCY_NOISE = False
 MAX_LATENCY_NOISE = 1.1
 
-USE_CWND = False
+MAX_LOSS = 0.01
+
+USE_CWND = True
 
 class Link():
 
@@ -192,7 +194,7 @@ class Network():
         
         # Very high thpt
         # reward = (10.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * latency - 2e3 * loss)
-        reward = (10.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * (latency-MAX_LATENCY) - 2e3 * loss)
+        reward = (8.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * (latency-MAX_LATENCY) - 2e3 * (loss - MAX_LOSS))
         
         # High thpt
         #reward = REWARD_SCALE * (5.0 * throughput / RATE_OBS_SCALE - 1e3 * latency / LAT_OBS_SCALE - 2e3 * loss)

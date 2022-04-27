@@ -57,6 +57,6 @@ loss_axis.plot(time_data, loss_data)
 loss_axis.set_ylabel("Loss Rate")
 loss_axis.set_xlabel("Monitor Interval")
 
-title = "Summary Graph with No Cwnd for Low Latency(Upper bound)"
+title = "Summary Graph with Cwnd and Upper bound for Latency and Loss Rate"
 fig.suptitle(title)
 fig.savefig(f"{title}.png", dpi=500)
