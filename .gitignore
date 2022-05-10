@@ -4,3 +4,7 @@ src/gym/*.meta
 src/gym/*.index
 src/gym/*.pdf
 src/gym/*.data-00000-of-00001
+src/gym/log/
+log/
+src/gym/success_trial/
+src/gym/wandb
