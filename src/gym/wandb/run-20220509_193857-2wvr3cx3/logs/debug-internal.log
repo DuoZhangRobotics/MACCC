@@ -1,0 +1,654 @@
+2022-05-09 19:38:57,771 INFO    MainThread:2131489 [internal.py:wandb_internal():95] W&B internal server running at pid: 2131489, started at: 2022-05-09 19:38:57.771772
+2022-05-09 19:38:57,773 INFO    WriterThread:2131489 [datastore.py:open_for_write():77] open: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/run-2wvr3cx3.wandb
+2022-05-09 19:38:57,775 DEBUG   SenderThread:2131489 [sender.py:send():235] send: header
+2022-05-09 19:38:57,775 DEBUG   SenderThread:2131489 [sender.py:send():235] send: run
+2022-05-09 19:38:57,922 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: check_version
+2022-05-09 19:38:57,923 INFO    SenderThread:2131489 [dir_watcher.py:__init__():169] watching files in: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files
+2022-05-09 19:38:57,923 INFO    SenderThread:2131489 [sender.py:_start_run_threads():815] run started: 2wvr3cx3 with start time 1652139537
+2022-05-09 19:38:57,923 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:38:57,923 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:38:57,924 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: check_version
+2022-05-09 19:38:57,959 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: run_start
+2022-05-09 19:38:57,965 DEBUG   HandlerThread:2131489 [meta.py:__init__():37] meta init
+2022-05-09 19:38:57,965 DEBUG   HandlerThread:2131489 [meta.py:__init__():51] meta init done
+2022-05-09 19:38:57,965 DEBUG   HandlerThread:2131489 [meta.py:probe():211] probe
+2022-05-09 19:38:57,972 DEBUG   HandlerThread:2131489 [meta.py:_setup_git():201] setup git
+2022-05-09 19:38:57,984 DEBUG   HandlerThread:2131489 [meta.py:_setup_git():208] setup git done
+2022-05-09 19:38:57,984 DEBUG   HandlerThread:2131489 [meta.py:_save_code():89] save code
+2022-05-09 19:38:57,990 DEBUG   HandlerThread:2131489 [meta.py:_save_code():110] save code done
+2022-05-09 19:38:57,990 DEBUG   HandlerThread:2131489 [meta.py:_save_patches():127] save patches
+2022-05-09 19:38:58,042 DEBUG   HandlerThread:2131489 [meta.py:_save_patches():169] save patches done
+2022-05-09 19:38:58,043 DEBUG   HandlerThread:2131489 [meta.py:_save_pip():55] save pip
+2022-05-09 19:38:58,043 DEBUG   HandlerThread:2131489 [meta.py:_save_pip():69] save pip done
+2022-05-09 19:38:58,043 DEBUG   HandlerThread:2131489 [meta.py:_save_conda():76] save conda
+2022-05-09 19:38:58,926 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/code/src/gym/stable_solve.py
+2022-05-09 19:38:58,927 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/requirements.txt
+2022-05-09 19:38:58,927 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:38:58,927 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/conda-environment.yaml
+2022-05-09 19:38:58,927 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/diff.patch
+2022-05-09 19:38:58,927 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/code
+2022-05-09 19:38:58,927 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/code/src
+2022-05-09 19:38:58,927 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/code/src/gym
+2022-05-09 19:38:58,956 DEBUG   HandlerThread:2131489 [meta.py:_save_conda():86] save conda done
+2022-05-09 19:38:58,956 DEBUG   HandlerThread:2131489 [meta.py:probe():249] probe done
+2022-05-09 19:38:58,980 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:38:58,980 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-metadata.json with policy now
+2022-05-09 19:38:58,981 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file code/src/gym/stable_solve.py with policy now
+2022-05-09 19:38:58,981 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file diff.patch with policy now
+2022-05-09 19:38:58,986 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-09 19:38:58,987 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: stop_status
+2022-05-09 19:38:59,049 DEBUG   SenderThread:2131489 [sender.py:send():235] send: telemetry
+2022-05-09 19:38:59,926 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-metadata.json
+2022-05-09 19:38:59,926 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:00,466 DEBUG   SenderThread:2131489 [sender.py:send():235] send: telemetry
+2022-05-09 19:39:00,471 INFO    HandlerThread:2131489 [handler.py:handle_tbrecord():687] handling tbrecord: tbrecord {
+  log_dir: "./log/2022-05-09-19_38_57/runs/2022-05-09-19_38_57/PPO_1"
+  save: true
+}
+
+2022-05-09 19:39:00,471 DEBUG   HandlerThread:2131489 [config_util.py:dict_from_config_file():102] no default config file found in config-defaults.yaml
+2022-05-09 19:39:00,489 DEBUG   SenderThread:2131489 [sender.py:send():235] send: tbrecord
+2022-05-09 19:39:00,489 DEBUG   SenderThread:2131489 [sender.py:send():235] send: config
+2022-05-09 19:39:00,491 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:00,491 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file events.out.tfevents.1652139540.dl.2131432.0 with policy live
+2022-05-09 19:39:00,926 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:39:01,926 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:02,462 DEBUG   SenderThread:2131489 [sender.py:send():235] send: telemetry
+2022-05-09 19:39:02,463 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:02,463 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:02,866 INFO    Thread-17 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/l73dlqij-model.zip
+2022-05-09 19:39:02,927 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_created():217] file/dir created: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:03,927 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:04,553 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:04,553 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:04,929 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:04,930 INFO    Thread-18 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/253rx6yf-model.zip
+2022-05-09 19:39:05,928 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:07,432 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:07,432 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:07,814 INFO    Thread-19 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1a1mw2yu-model.zip
+2022-05-09 19:39:07,930 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:07,930 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:08,636 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:08,636 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:08,930 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:09,019 INFO    Thread-20 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1jc6usd8-model.zip
+2022-05-09 19:39:09,930 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:10,591 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:10,591 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:10,931 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:10,968 INFO    Thread-21 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/kzxiau78-model.zip
+2022-05-09 19:39:11,931 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:12,511 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:12,511 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:12,912 INFO    Thread-22 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1ve78z3w-model.zip
+2022-05-09 19:39:12,932 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:13,596 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:13,596 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:13,932 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:13,932 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:13,980 INFO    Thread-23 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/vgcxrb9d-model.zip
+2022-05-09 19:39:14,050 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-09 19:39:14,050 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: stop_status
+2022-05-09 19:39:14,862 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:14,862 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:14,933 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:15,282 INFO    Thread-24 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1dyd70g6-model.zip
+2022-05-09 19:39:15,933 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:15,934 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:39:16,119 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:16,119 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:16,531 INFO    Thread-25 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1pcs8skd-model.zip
+2022-05-09 19:39:16,934 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:17,935 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:18,290 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:18,290 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:18,691 INFO    Thread-26 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/134yaqnb-model.zip
+2022-05-09 19:39:18,935 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:19,936 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:20,117 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:20,117 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:20,505 INFO    Thread-27 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1jzifexg-model.zip
+2022-05-09 19:39:20,936 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:21,283 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:21,283 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:21,664 INFO    Thread-28 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/23gajb4t-model.zip
+2022-05-09 19:39:21,937 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:21,937 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:22,263 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:22,263 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:22,643 INFO    Thread-29 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/2m6ytgzj-model.zip
+2022-05-09 19:39:22,938 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:23,395 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:23,395 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:23,780 INFO    Thread-30 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/w6yco7kg-model.zip
+2022-05-09 19:39:23,938 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:23,938 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:25,664 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:25,664 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:25,939 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:25,939 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:26,049 INFO    Thread-31 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/2i4i0dfk-model.zip
+2022-05-09 19:39:26,685 DEBUG   SenderThread:2131489 [sender.py:send():235] send: stats
+2022-05-09 19:39:27,882 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:27,883 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:27,940 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:28,273 INFO    Thread-32 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3d8x7379-model.zip
+2022-05-09 19:39:28,940 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/config.yaml
+2022-05-09 19:39:28,941 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:39:29,142 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-09 19:39:29,143 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: stop_status
+2022-05-09 19:39:29,293 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:29,293 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:29,534 DEBUG   SenderThread:2131489 [sender.py:send():235] send: history
+2022-05-09 19:39:29,534 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:39:29,535 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:39:29,669 INFO    Thread-33 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1rbwve2x-model.zip
+2022-05-09 19:39:29,941 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:29,941 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:29,941 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:39:30,384 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:30,384 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:30,781 INFO    Thread-34 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1kmcrcam-model.zip
+2022-05-09 19:39:30,941 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:31,442 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:31,442 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:31,827 INFO    Thread-35 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1pbvajxv-model.zip
+2022-05-09 19:39:31,942 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:31,942 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:32,416 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:32,416 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:32,809 INFO    Thread-36 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1bq9kben-model.zip
+2022-05-09 19:39:32,942 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:33,850 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:33,850 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:33,942 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:33,943 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:34,244 INFO    Thread-37 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3w132mj0-model.zip
+2022-05-09 19:39:35,467 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:35,467 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:35,919 INFO    Thread-38 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3ehipb8w-model.zip
+2022-05-09 19:39:35,943 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:35,944 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:36,955 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:36,955 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:37,340 INFO    Thread-39 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1fkbq0a1-model.zip
+2022-05-09 19:39:37,944 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:37,945 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:38,146 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:38,146 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:38,553 INFO    Thread-40 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/25jrrz89-model.zip
+2022-05-09 19:39:38,945 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:39,549 DEBUG   SenderThread:2131489 [sender.py:send():235] send: history
+2022-05-09 19:39:39,549 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:39:39,549 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:39:39,903 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:39,904 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:39,945 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:39,946 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:39,946 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:39:39,946 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:39:40,288 INFO    Thread-41 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/14sbprvq-model.zip
+2022-05-09 19:39:40,946 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:40,946 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:40,946 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:41,360 INFO    Thread-42 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/kchj4hti-model.zip
+2022-05-09 19:39:41,946 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:42,064 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:42,064 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:42,451 INFO    Thread-43 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/lj8ltumt-model.zip
+2022-05-09 19:39:42,947 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:43,500 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:43,500 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:43,947 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:43,948 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:43,998 INFO    Thread-44 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/utd6l39l-model.zip
+2022-05-09 19:39:44,203 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-09 19:39:44,203 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: stop_status
+2022-05-09 19:39:45,520 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:45,521 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:45,915 INFO    Thread-45 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/ak1uk0bn-model.zip
+2022-05-09 19:39:45,948 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:45,949 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:46,545 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:46,545 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:46,949 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:46,963 INFO    Thread-46 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1ndh8aov-model.zip
+2022-05-09 19:39:47,535 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:47,536 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:47,949 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:47,949 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:48,020 INFO    Thread-47 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3n56dmw3-model.zip
+2022-05-09 19:39:49,950 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:50,393 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:50,394 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:50,815 INFO    Thread-48 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3js6yc8s-model.zip
+2022-05-09 19:39:50,950 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:51,565 DEBUG   SenderThread:2131489 [sender.py:send():235] send: history
+2022-05-09 19:39:51,566 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:39:51,566 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:39:51,794 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:51,794 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:51,951 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:51,951 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:51,951 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:39:51,951 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:39:52,310 INFO    Thread-49 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3pguodgf-model.zip
+2022-05-09 19:39:53,952 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:56,197 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:56,197 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:56,589 INFO    Thread-50 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/36uvd1ri-model.zip
+2022-05-09 19:39:56,953 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:57,408 DEBUG   SenderThread:2131489 [sender.py:send():235] send: stats
+2022-05-09 19:39:57,953 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:39:59,264 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:39:59,264 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:39:59,287 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-09 19:39:59,288 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: stop_status
+2022-05-09 19:39:59,657 INFO    Thread-51 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/iqy5u8u6-model.zip
+2022-05-09 19:39:59,954 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:39:59,955 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:01,450 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:01,450 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:01,847 INFO    Thread-52 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/2asidw5z-model.zip
+2022-05-09 19:40:01,955 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:01,956 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:03,718 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:03,719 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:03,956 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:03,956 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:04,096 INFO    Thread-53 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/2cnjp1o5-model.zip
+2022-05-09 19:40:05,957 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:05,987 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:05,987 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:06,371 INFO    Thread-54 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/12r128xs-model.zip
+2022-05-09 19:40:06,957 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:07,958 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:08,677 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:08,677 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:08,958 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:09,066 INFO    Thread-55 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/5p0cnfo6-model.zip
+2022-05-09 19:40:09,959 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:11,507 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:11,507 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:11,937 INFO    Thread-56 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3691cs7h-model.zip
+2022-05-09 19:40:11,960 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:11,960 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:12,904 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:12,904 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:12,960 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:12,960 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:40:13,289 INFO    Thread-57 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3sjp5av0-model.zip
+2022-05-09 19:40:13,313 INFO    Thread-58 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/qr19ut3u-events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:40:13,599 DEBUG   SenderThread:2131489 [sender.py:send():235] send: history
+2022-05-09 19:40:13,600 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:40:13,600 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:40:13,960 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:13,961 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:40:13,980 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:13,980 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:14,363 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-09 19:40:14,364 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: stop_status
+2022-05-09 19:40:14,374 INFO    Thread-59 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/336rl87l-model.zip
+2022-05-09 19:40:14,961 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:15,111 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:15,111 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:15,502 INFO    Thread-60 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/ve6ul1cw-model.zip
+2022-05-09 19:40:15,962 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:15,962 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:16,531 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:16,531 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:16,923 INFO    Thread-61 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/44a33qqo-model.zip
+2022-05-09 19:40:16,963 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:17,626 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:17,626 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:17,963 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:17,963 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:18,021 INFO    Thread-62 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/yzgrwq88-model.zip
+2022-05-09 19:40:18,628 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:18,628 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:18,964 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:19,118 INFO    Thread-63 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/114wiv6z-model.zip
+2022-05-09 19:40:19,710 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:19,710 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:19,964 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:19,964 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:20,103 INFO    Thread-64 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3vlmuk2f-model.zip
+2022-05-09 19:40:21,965 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:23,164 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:23,164 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:23,553 INFO    Thread-65 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/20flrokv-model.zip
+2022-05-09 19:40:23,966 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:23,966 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:25,109 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:25,109 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:25,489 INFO    Thread-66 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1xfk8nhx-model.zip
+2022-05-09 19:40:25,621 DEBUG   SenderThread:2131489 [sender.py:send():235] send: history
+2022-05-09 19:40:25,621 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:40:25,621 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:40:25,967 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:25,967 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:25,967 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:40:25,967 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:40:26,681 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:26,681 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:26,967 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:27,053 INFO    Thread-67 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/4cmilu0k-model.zip
+2022-05-09 19:40:27,755 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:27,755 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:27,968 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:27,968 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:28,095 DEBUG   SenderThread:2131489 [sender.py:send():235] send: stats
+2022-05-09 19:40:28,143 INFO    Thread-68 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3eq876zo-model.zip
+2022-05-09 19:40:29,426 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-09 19:40:29,426 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: stop_status
+2022-05-09 19:40:29,639 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:29,639 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:29,969 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:29,969 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:30,023 INFO    Thread-69 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1s9ju456-model.zip
+2022-05-09 19:40:30,641 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:30,641 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:30,969 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:31,268 INFO    Thread-70 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/29b0iirr-model.zip
+2022-05-09 19:40:31,683 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:31,683 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:31,970 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:31,970 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:32,062 INFO    Thread-71 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/r7vs4opx-model.zip
+2022-05-09 19:40:33,759 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:33,759 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:33,970 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:33,971 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:34,151 INFO    Thread-72 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/42paoosc-model.zip
+2022-05-09 19:40:35,796 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:35,796 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:35,971 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:36,168 INFO    Thread-73 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/2x3904ww-model.zip
+2022-05-09 19:40:36,982 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:36,982 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:37,382 INFO    Thread-74 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/u0q7tows-model.zip
+2022-05-09 19:40:37,640 DEBUG   SenderThread:2131489 [sender.py:send():235] send: history
+2022-05-09 19:40:37,640 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:40:37,640 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:40:37,972 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:37,972 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:37,973 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:40:37,973 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:40:39,049 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:39,049 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:39,427 INFO    Thread-75 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/26w4pbeq-model.zip
+2022-05-09 19:40:39,973 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:39,973 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:40,352 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:40,352 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:40,738 INFO    Thread-76 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/8j9sccuc-model.zip
+2022-05-09 19:40:40,974 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:41,974 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:42,004 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:42,004 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:42,396 INFO    Thread-77 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/279xuthy-model.zip
+2022-05-09 19:40:42,974 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:43,014 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:43,014 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:43,397 INFO    Thread-78 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/2z99d5rv-model.zip
+2022-05-09 19:40:43,975 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:43,975 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:44,493 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-09 19:40:44,493 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: stop_status
+2022-05-09 19:40:45,976 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:46,807 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:46,807 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:46,976 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:47,214 INFO    Thread-79 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3udzqljx-model.zip
+2022-05-09 19:40:47,873 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:47,874 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:47,977 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:47,977 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:48,257 INFO    Thread-80 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/17vuhuwq-model.zip
+2022-05-09 19:40:49,977 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:51,285 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:51,286 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:51,683 INFO    Thread-81 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1b763g6q-model.zip
+2022-05-09 19:40:51,978 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:52,492 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:52,492 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:52,979 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:53,106 INFO    Thread-82 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1eq5xy22-model.zip
+2022-05-09 19:40:53,662 DEBUG   SenderThread:2131489 [sender.py:send():235] send: history
+2022-05-09 19:40:53,662 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:40:53,663 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:40:53,873 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:53,874 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:53,979 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:53,980 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:53,980 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:40:53,980 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:40:54,300 INFO    Thread-83 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1d7s2t6p-model.zip
+2022-05-09 19:40:55,980 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:56,066 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:56,066 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:56,479 INFO    Thread-84 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/8dnlf6fg-model.zip
+2022-05-09 19:40:56,981 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:57,329 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:57,329 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:57,734 INFO    Thread-85 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/i5qycd7m-model.zip
+2022-05-09 19:40:57,982 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:57,982 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:40:58,331 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:58,331 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:58,755 INFO    Thread-86 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/2baxngdo-model.zip
+2022-05-09 19:40:58,798 DEBUG   SenderThread:2131489 [sender.py:send():235] send: stats
+2022-05-09 19:40:58,982 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:59,313 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:40:59,313 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:40:59,559 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-09 19:40:59,559 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: stop_status
+2022-05-09 19:40:59,725 INFO    Thread-87 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/droamavl-model.zip
+2022-05-09 19:40:59,983 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:40:59,983 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:00,575 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:00,575 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:00,969 INFO    Thread-88 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/31goxne9-model.zip
+2022-05-09 19:41:00,983 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:01,894 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:01,894 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:01,983 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:01,984 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:02,496 INFO    Thread-89 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3kzbz2h5-model.zip
+2022-05-09 19:41:03,850 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:03,850 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:03,984 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:03,985 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:04,244 INFO    Thread-90 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/19ya5pd9-model.zip
+2022-05-09 19:41:04,985 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:41:05,281 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:05,281 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:05,682 DEBUG   SenderThread:2131489 [sender.py:send():235] send: history
+2022-05-09 19:41:05,682 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:41:05,683 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:41:05,985 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:05,985 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:05,986 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:41:06,616 INFO    Thread-91 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3h80mzub-model.zip
+2022-05-09 19:41:06,812 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:06,812 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:06,986 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:07,190 INFO    Thread-92 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/2vpamsxx-model.zip
+2022-05-09 19:41:07,822 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:07,822 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:07,986 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:07,986 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:08,200 INFO    Thread-93 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/4gcpb3n8-model.zip
+2022-05-09 19:41:09,123 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:09,123 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:09,506 INFO    Thread-94 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/24c1x9ob-model.zip
+2022-05-09 19:41:09,987 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:09,987 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:11,988 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:12,781 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:12,781 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:12,988 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:13,175 INFO    Thread-95 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/1lpc1xx4-model.zip
+2022-05-09 19:41:13,989 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:14,038 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:14,039 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:14,454 INFO    Thread-96 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/7q8bxk81-model.zip
+2022-05-09 19:41:14,627 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-09 19:41:14,627 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: stop_status
+2022-05-09 19:41:14,989 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:15,032 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:15,033 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:15,441 INFO    Thread-97 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/9lfjufcc-model.zip
+2022-05-09 19:41:15,990 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:15,990 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:16,135 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:16,135 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:16,565 INFO    Thread-98 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/2mstzwmm-model.zip
+2022-05-09 19:41:16,990 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:17,443 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:17,443 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:17,699 DEBUG   SenderThread:2131489 [sender.py:send():235] send: history
+2022-05-09 19:41:17,699 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:41:17,699 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:41:17,840 INFO    Thread-99 :2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/28sjl1ah-model.zip
+2022-05-09 19:41:17,991 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:17,991 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:17,991 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:41:17,991 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:41:18,372 INFO    Thread-100:2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/37gkpqkf-events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:41:19,991 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:20,284 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:20,285 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:20,673 INFO    Thread-101:2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/3a62jz1j-model.zip
+2022-05-09 19:41:20,992 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:21,647 DEBUG   SenderThread:2131489 [sender.py:send():235] send: files
+2022-05-09 19:41:21,647 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file model.zip with policy live
+2022-05-09 19:41:21,992 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip
+2022-05-09 19:41:21,993 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:22,021 INFO    Thread-102:2131489 [upload_job.py:push():137] Uploaded file /tmp/tmpzmoiy3ywwandb/16rqq9jc-model.zip
+2022-05-09 19:41:22,660 WARNING MainThread:2131489 [internal.py:wandb_internal():155] Internal process interrupt: 1
+2022-05-09 19:41:22,662 DEBUG   SenderThread:2131489 [sender.py:send():235] send: telemetry
+2022-05-09 19:41:22,662 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-09 19:41:23,994 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:25,455 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-09 19:41:25,455 DEBUG   SenderThread:2131489 [sender.py:send():235] send: exit
+2022-05-09 19:41:25,456 INFO    SenderThread:2131489 [sender.py:send_exit():371] handling exit code: 255
+2022-05-09 19:41:25,456 INFO    SenderThread:2131489 [sender.py:send_exit():373] handling runtime: 147
+2022-05-09 19:41:25,456 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:41:25,456 INFO    SenderThread:2131489 [sender.py:send_exit():379] send defer
+2022-05-09 19:41:25,457 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: poll_exit
+2022-05-09 19:41:25,457 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: defer
+2022-05-09 19:41:25,457 INFO    HandlerThread:2131489 [handler.py:handle_request_defer():164] handle defer: 0
+2022-05-09 19:41:25,457 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: defer
+2022-05-09 19:41:25,457 INFO    SenderThread:2131489 [sender.py:send_request_defer():388] handle sender defer: 0
+2022-05-09 19:41:25,457 INFO    SenderThread:2131489 [sender.py:transition_state():392] send defer: 1
+2022-05-09 19:41:25,458 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: defer
+2022-05-09 19:41:25,458 INFO    HandlerThread:2131489 [handler.py:handle_request_defer():164] handle defer: 1
+2022-05-09 19:41:25,521 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: defer
+2022-05-09 19:41:25,521 INFO    SenderThread:2131489 [sender.py:send_request_defer():388] handle sender defer: 1
+2022-05-09 19:41:25,521 INFO    SenderThread:2131489 [sender.py:transition_state():392] send defer: 2
+2022-05-09 19:41:25,522 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: defer
+2022-05-09 19:41:25,522 DEBUG   SenderThread:2131489 [sender.py:send():235] send: stats
+2022-05-09 19:41:25,522 INFO    HandlerThread:2131489 [handler.py:handle_request_defer():164] handle defer: 2
+2022-05-09 19:41:25,523 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: defer
+2022-05-09 19:41:25,523 INFO    SenderThread:2131489 [sender.py:send_request_defer():388] handle sender defer: 2
+2022-05-09 19:41:25,523 INFO    SenderThread:2131489 [sender.py:transition_state():392] send defer: 3
+2022-05-09 19:41:25,523 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: defer
+2022-05-09 19:41:25,523 INFO    HandlerThread:2131489 [handler.py:handle_request_defer():164] handle defer: 3
+2022-05-09 19:41:25,995 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:25,995 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:41:29,996 INFO    Thread-7  :2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/config.yaml
+2022-05-09 19:41:31,715 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-09 19:41:31,715 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: defer
+2022-05-09 19:41:31,715 INFO    SenderThread:2131489 [sender.py:send_request_defer():388] handle sender defer: 3
+2022-05-09 19:41:31,715 INFO    SenderThread:2131489 [sender.py:transition_state():392] send defer: 4
+2022-05-09 19:41:31,715 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: poll_exit
+2022-05-09 19:41:31,716 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-09 19:41:31,718 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: defer
+2022-05-09 19:41:31,718 INFO    HandlerThread:2131489 [handler.py:handle_request_defer():164] handle defer: 4
+2022-05-09 19:41:31,719 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: poll_exit
+2022-05-09 19:41:31,719 DEBUG   SenderThread:2131489 [sender.py:send():235] send: history
+2022-05-09 19:41:31,719 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:41:31,720 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:41:31,720 DEBUG   SenderThread:2131489 [sender.py:send():235] send: summary
+2022-05-09 19:41:31,724 INFO    SenderThread:2131489 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-05-09 19:41:31,724 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: defer
+2022-05-09 19:41:31,724 INFO    SenderThread:2131489 [sender.py:send_request_defer():388] handle sender defer: 4
+2022-05-09 19:41:31,724 INFO    SenderThread:2131489 [sender.py:transition_state():392] send defer: 5
+2022-05-09 19:41:31,724 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: defer
+2022-05-09 19:41:31,724 INFO    HandlerThread:2131489 [handler.py:handle_request_defer():164] handle defer: 5
+2022-05-09 19:41:31,725 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: defer
+2022-05-09 19:41:31,725 INFO    SenderThread:2131489 [sender.py:send_request_defer():388] handle sender defer: 5
+2022-05-09 19:41:31,725 INFO    SenderThread:2131489 [sender.py:transition_state():392] send defer: 6
+2022-05-09 19:41:31,725 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: defer
+2022-05-09 19:41:31,725 INFO    HandlerThread:2131489 [handler.py:handle_request_defer():164] handle defer: 6
+2022-05-09 19:41:31,725 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: defer
+2022-05-09 19:41:31,725 INFO    SenderThread:2131489 [sender.py:send_request_defer():388] handle sender defer: 6
+2022-05-09 19:41:31,725 INFO    SenderThread:2131489 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-05-09 19:41:31,821 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-09 19:41:31,997 INFO    SenderThread:2131489 [dir_watcher.py:_on_file_modified():230] file/dir modified: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:41:31,998 INFO    SenderThread:2131489 [dir_watcher.py:finish():313] scan: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files
+2022-05-09 19:41:31,998 INFO    SenderThread:2131489 [dir_watcher.py:finish():327] scan save: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/model.zip model.zip
+2022-05-09 19:41:31,998 INFO    SenderThread:2131489 [dir_watcher.py:finish():327] scan save: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/diff.patch diff.patch
+2022-05-09 19:41:31,998 INFO    SenderThread:2131489 [dir_watcher.py:finish():327] scan save: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-metadata.json wandb-metadata.json
+2022-05-09 19:41:31,998 INFO    SenderThread:2131489 [dir_watcher.py:finish():327] scan save: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/requirements.txt requirements.txt
+2022-05-09 19:41:31,998 INFO    SenderThread:2131489 [dir_watcher.py:finish():327] scan save: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/conda-environment.yaml conda-environment.yaml
+2022-05-09 19:41:31,998 INFO    SenderThread:2131489 [dir_watcher.py:finish():327] scan save: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json wandb-summary.json
+2022-05-09 19:41:31,998 INFO    SenderThread:2131489 [dir_watcher.py:finish():327] scan save: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log output.log
+2022-05-09 19:41:31,999 INFO    SenderThread:2131489 [dir_watcher.py:finish():327] scan save: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/events.out.tfevents.1652139540.dl.2131432.0 events.out.tfevents.1652139540.dl.2131432.0
+2022-05-09 19:41:31,999 INFO    SenderThread:2131489 [dir_watcher.py:finish():327] scan save: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/config.yaml config.yaml
+2022-05-09 19:41:31,999 INFO    SenderThread:2131489 [dir_watcher.py:finish():327] scan save: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/code/src/gym/stable_solve.py code/src/gym/stable_solve.py
+2022-05-09 19:41:31,999 INFO    SenderThread:2131489 [sender.py:transition_state():392] send defer: 7
+2022-05-09 19:41:31,999 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: poll_exit
+2022-05-09 19:41:32,003 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: defer
+2022-05-09 19:41:32,003 INFO    HandlerThread:2131489 [handler.py:handle_request_defer():164] handle defer: 7
+2022-05-09 19:41:32,007 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: defer
+2022-05-09 19:41:32,007 INFO    SenderThread:2131489 [sender.py:send_request_defer():388] handle sender defer: 7
+2022-05-09 19:41:32,007 INFO    SenderThread:2131489 [file_pusher.py:finish():145] shutting down file pusher
+2022-05-09 19:41:32,101 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-09 19:41:32,101 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: poll_exit
+2022-05-09 19:41:32,203 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-09 19:41:32,203 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: poll_exit
+2022-05-09 19:41:32,304 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-09 19:41:32,304 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: poll_exit
+2022-05-09 19:41:32,346 INFO    Thread-105:2131489 [upload_job.py:push():137] Uploaded file /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/wandb-summary.json
+2022-05-09 19:41:32,349 INFO    Thread-104:2131489 [upload_job.py:push():137] Uploaded file /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/conda-environment.yaml
+2022-05-09 19:41:32,354 INFO    Thread-106:2131489 [upload_job.py:push():137] Uploaded file /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/output.log
+2022-05-09 19:41:32,359 INFO    Thread-103:2131489 [upload_job.py:push():137] Uploaded file /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/requirements.txt
+2022-05-09 19:41:32,381 INFO    Thread-107:2131489 [upload_job.py:push():137] Uploaded file /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/files/config.yaml
+2022-05-09 19:41:32,405 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-09 19:41:32,406 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: poll_exit
+2022-05-09 19:41:32,507 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-09 19:41:32,507 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: poll_exit
+2022-05-09 19:41:32,581 INFO    Thread-6  :2131489 [sender.py:transition_state():392] send defer: 8
+2022-05-09 19:41:32,582 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: defer
+2022-05-09 19:41:32,582 INFO    HandlerThread:2131489 [handler.py:handle_request_defer():164] handle defer: 8
+2022-05-09 19:41:32,582 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: defer
+2022-05-09 19:41:32,582 INFO    SenderThread:2131489 [sender.py:send_request_defer():388] handle sender defer: 8
+2022-05-09 19:41:32,608 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-09 19:41:33,497 INFO    SenderThread:2131489 [sender.py:transition_state():392] send defer: 9
+2022-05-09 19:41:33,498 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: poll_exit
+2022-05-09 19:41:33,498 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: defer
+2022-05-09 19:41:33,498 INFO    HandlerThread:2131489 [handler.py:handle_request_defer():164] handle defer: 9
+2022-05-09 19:41:33,498 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: defer
+2022-05-09 19:41:33,498 INFO    SenderThread:2131489 [sender.py:send_request_defer():388] handle sender defer: 9
+2022-05-09 19:41:33,498 INFO    SenderThread:2131489 [sender.py:transition_state():392] send defer: 10
+2022-05-09 19:41:33,499 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: defer
+2022-05-09 19:41:33,499 DEBUG   SenderThread:2131489 [sender.py:send():235] send: final
+2022-05-09 19:41:33,499 INFO    HandlerThread:2131489 [handler.py:handle_request_defer():164] handle defer: 10
+2022-05-09 19:41:33,499 DEBUG   SenderThread:2131489 [sender.py:send():235] send: footer
+2022-05-09 19:41:33,499 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: defer
+2022-05-09 19:41:33,500 INFO    SenderThread:2131489 [sender.py:send_request_defer():388] handle sender defer: 10
+2022-05-09 19:41:33,599 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-09 19:41:33,599 DEBUG   SenderThread:2131489 [sender.py:send_request():249] send_request: poll_exit
+2022-05-09 19:41:33,599 INFO    SenderThread:2131489 [file_pusher.py:join():150] waiting for file pusher
+2022-05-09 19:41:33,818 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: sampled_history
+2022-05-09 19:41:33,819 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: get_summary
+2022-05-09 19:41:33,820 DEBUG   HandlerThread:2131489 [handler.py:handle_request():141] handle_request: shutdown
+2022-05-09 19:41:33,820 INFO    HandlerThread:2131489 [handler.py:finish():778] shutting down handler
+2022-05-09 19:41:34,499 INFO    WriterThread:2131489 [datastore.py:close():281] close: /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/run-2wvr3cx3.wandb
+2022-05-09 19:41:34,716 INFO    SenderThread:2131489 [sender.py:finish():1078] shutting down sender
+2022-05-09 19:41:34,716 INFO    SenderThread:2131489 [file_pusher.py:finish():145] shutting down file pusher
+2022-05-09 19:41:34,717 INFO    SenderThread:2131489 [file_pusher.py:join():150] waiting for file pusher
+2022-05-09 19:41:34,718 INFO    MainThread:2131489 [internal.py:handle_exit():82] Internal process exited

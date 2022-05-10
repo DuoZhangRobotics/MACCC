@@ -1,0 +1,212 @@
+2022-05-09 19:38:57,401 INFO    MainThread:2131432 [wandb_setup.py:_flush():75] Loading settings from /home/duo/.config/wandb/settings
+2022-05-09 19:38:57,401 INFO    MainThread:2131432 [wandb_setup.py:_flush():75] Loading settings from /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/settings
+2022-05-09 19:38:57,401 INFO    MainThread:2131432 [wandb_setup.py:_flush():75] Loading settings from environment variables: {}
+2022-05-09 19:38:57,401 INFO    MainThread:2131432 [wandb_setup.py:_flush():75] Inferring run settings from compute environment: {'program_relpath': 'src/gym/stable_solve.py', 'program': 'stable_solve.py'}
+2022-05-09 19:38:57,401 INFO    MainThread:2131432 [wandb_init.py:_log_setup():405] Logging user logs to /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/logs/debug.log
+2022-05-09 19:38:57,401 INFO    MainThread:2131432 [wandb_init.py:_log_setup():406] Logging internal logs to /mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/wandb/run-20220509_193857-2wvr3cx3/logs/debug-internal.log
+2022-05-09 19:38:57,402 INFO    MainThread:2131432 [wandb_init.py:init():439] calling init triggers
+2022-05-09 19:38:57,402 INFO    MainThread:2131432 [wandb_init.py:init():443] wandb.init called with sweep_config: {}
+config: {'total_timesteps': 32800000, 'env_name': 'PccNs-v0'}
+2022-05-09 19:38:57,402 INFO    MainThread:2131432 [wandb_init.py:init():492] starting backend
+2022-05-09 19:38:57,402 INFO    MainThread:2131432 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-05-09 19:38:57,414 INFO    MainThread:2131432 [backend.py:ensure_launched():219] starting backend process...
+2022-05-09 19:38:57,422 INFO    MainThread:2131432 [backend.py:ensure_launched():225] started backend process with pid: 2131489
+2022-05-09 19:38:57,423 INFO    MainThread:2131432 [wandb_init.py:init():501] backend started and connected
+2022-05-09 19:38:57,426 INFO    MainThread:2131432 [wandb_init.py:init():565] updated telemetry
+2022-05-09 19:38:57,446 INFO    MainThread:2131432 [wandb_init.py:init():596] communicating run to backend with 30 second timeout
+2022-05-09 19:38:57,921 INFO    MainThread:2131432 [wandb_run.py:_on_init():1759] communicating current version
+2022-05-09 19:38:57,957 INFO    MainThread:2131432 [wandb_run.py:_on_init():1763] got version response upgrade_message: "wandb version 0.12.16 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2022-05-09 19:38:57,957 INFO    MainThread:2131432 [wandb_init.py:init():625] starting run threads in backend
+2022-05-09 19:38:58,986 INFO    MainThread:2131432 [wandb_run.py:_console_start():1733] atexit reg
+2022-05-09 19:38:58,986 INFO    MainThread:2131432 [wandb_run.py:_redirect():1606] redirect: SettingsConsole.REDIRECT
+2022-05-09 19:38:58,987 INFO    MainThread:2131432 [wandb_run.py:_redirect():1611] Redirecting console.
+2022-05-09 19:38:58,988 INFO    MainThread:2131432 [wandb_run.py:_redirect():1667] Redirects installed.
+2022-05-09 19:38:58,988 INFO    MainThread:2131432 [wandb_init.py:init():664] run started, returning control to user process
+2022-05-09 19:39:00,470 INFO    MainThread:2131432 [wandb_run.py:_tensorboard_callback():1095] tensorboard callback: ./log/2022-05-09-19_38_57/runs/2022-05-09-19_38_57/PPO_1, None
+2022-05-09 19:39:00,476 INFO    MainThread:2131432 [wandb_run.py:_config_callback():992] config_cb None None {'algo': 'PPO', 'policy_class': "<class 'stable_baselines3.common.policies.ActorCriticPolicy'>", 'device': 'cuda', 'env': '<stable_baselines3.common.vec_env.dummy_vec_env.DummyVecEnv object at 0x7f190e326550>', '_vec_normalize_env': 'None', 'verbose': 1, 'policy_kwargs': "{'net_arch': [{'pi': [32, 16], 'vf': [32, 16]}]}", 'observation_space': 'Box([-1.  1.  0. -1.  1.  0. -1.  1.  0. -1.  1.  0. -1.  1.  0. -1.  1.  0.\n -1.  1.  0. -1.  1.  0. -1.  1.  0. -1.  1.  0. -1.  1.  0. -1.  1.  0.\n -1.  1.  0. -1.  1.  0. -1.  1.  0. -1.  1.  0. -1.  1.  0. -1.  1.  0.\n -1.  1.  0. -1.  1.  0.], [   10. 10000.  1000.    10. 10000.  1000.    10. 10000.  1000.    10.\n 10000.  1000.    10. 10000.  1000.    10. 10000.  1000.    10. 10000.\n  1000.    10. 10000.  1000.    10. 10000.  1000.    10. 10000.  1000.\n    10. 10000.  1000.    10. 10000.  1000.    10. 10000.  1000.    10.\n 10000.  1000.    10. 10000.  1000.    10. 10000.  1000.    10. 10000.\n  1000.    10. 10000.  1000.    10. 10000.  1000.    10. 10000.  1000.], (60,), float32)', 'action_space': 'Box([-1.e+12 -1.e+12 -1.e+12 -1.e+12], [1.e+12 1.e+12 1.e+12 1.e+12], (4,), float32)', 'n_envs': 1, 'num_timesteps': 0, '_total_timesteps': 32800000, '_num_timesteps_at_start': 0, 'eval_env': 'None', 'seed': 'None', 'action_noise': 'None', 'start_time': 1652139540.4661298, 'policy': 'ActorCriticPolicy(\n  (features_extractor): FlattenExtractor(\n    (flatten): Flatten(start_dim=1, end_dim=-1)\n  )\n  (mlp_extractor): MlpExtractor(\n    (shared_net): Sequential()\n    (policy_net): Sequential(\n      (0): Linear(in_features=60, out_features=32, bias=True)\n      (1): Tanh()\n      (2): Linear(in_features=32, out_features=16, bias=True)\n      (3): Tanh()\n    )\n    (value_net): Sequential(\n      (0): Linear(in_features=60, out_features=32, bias=True)\n      (1): Tanh()\n      (2): Linear(in_features=32, out_features=16, bias=True)\n      (3): Tanh()\n    )\n  )\n  (action_net): Linear(in_features=16, out_features=4, bias=True)\n  (value_net): Linear(in_features=16, out_features=1, bias=True)\n)', 'learning_rate': 0.0003, 'tensorboard_log': './log/2022-05-09-19_38_57/runs/2022-05-09-19_38_57', 'lr_schedule': '<function constant_fn.<locals>.func at 0x7f190e2fa7a0>', '_last_obs': '[[0. 1. 1. 0. 1. 1. 0. 1. 1. 0. 1. 1. 0. 1. 1. 0. 1. 1. 0. 1. 1. 0. 1. 1.\n  0. 1. 1. 0. 1. 1. 0. 1. 1. 0. 1. 1. 0. 1. 1. 0. 1. 1. 0. 1. 1. 0. 1. 1.\n  0. 1. 1. 0. 1. 1. 0. 1. 1. 0. 1. 1.]]', '_last_episode_starts': '[ True]', '_last_original_obs': 'None', '_episode_num': 0, 'use_sde': 'False', 'sde_sample_freq': -1, '_current_progress_remaining': 1, 'ep_info_buffer': 'deque([], maxlen=100)', 'ep_success_buffer': 'deque([], maxlen=100)', '_n_updates': 0, '_logger': '<stable_baselines3.common.logger.Logger object at 0x7f191484c090>', '_custom_logger': 'False', 'n_steps': 8192, 'gamma': 0.99, 'gae_lambda': 0.95, 'ent_coef': 0.0, 'vf_coef': 0.5, 'max_grad_norm': 0.5, 'rollout_buffer': '<stable_baselines3.common.buffers.RolloutBuffer object at 0x7f190e31b110>', 'batch_size': 2048, 'n_epochs': 10, 'clip_range': '<function constant_fn.<locals>.func at 0x7f190c0dd0e0>', 'clip_range_vf': 'None', 'normalize_advantage': 'True', 'target_kl': 'None'}
+2022-05-09 19:39:02,462 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:04,552 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:07,431 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:08,636 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:10,590 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:12,511 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:13,596 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:14,859 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:16,118 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:18,289 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:20,116 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:21,282 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:22,262 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:23,395 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:25,663 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:27,882 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:29,292 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:30,383 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:31,441 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:32,415 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:33,849 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:35,466 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:36,954 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:38,145 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:39,903 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:40,945 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:42,064 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:43,499 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:45,520 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:46,545 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:47,535 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:50,393 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:51,794 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:56,196 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:39:59,263 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:01,450 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:03,718 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:05,986 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:08,676 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:11,506 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:12,903 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:13,979 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:15,110 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:16,530 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:17,625 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:18,627 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:19,710 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:23,162 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:25,108 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:26,680 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:27,755 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:29,638 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:30,640 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:31,682 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:33,759 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:35,796 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:36,981 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:39,048 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:40,351 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:42,004 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:43,013 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:46,806 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:47,873 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:51,284 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:52,491 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:53,873 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:56,065 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:57,328 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:58,331 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:40:59,312 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:00,575 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:01,894 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:03,850 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:05,280 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:06,812 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:07,821 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:09,122 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:12,780 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:14,038 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:15,032 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:16,134 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:17,442 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:20,284 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:21,646 INFO    MainThread:2131432 [sb3.py:save_model():128] Saving model checkpoint to ./log/2022-05-09-19_38_57/models/2022-05-09-19_38_57/model.zip
+2022-05-09 19:41:22,660 INFO    MainThread:2131432 [wandb_run.py:_atexit_cleanup():1702] got exitcode: 255
+2022-05-09 19:41:22,661 INFO    MainThread:2131432 [wandb_run.py:_restore():1674] restore
+2022-05-09 19:41:25,457 INFO    MainThread:2131432 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 2
+  other_count: 3
+}
+pusher_stats {
+  uploaded_bytes: 97436
+  total_bytes: 121162
+}
+
+2022-05-09 19:41:30,558 INFO    MainThread:2131432 [wandb_run.py:_on_finish():1831] got exit ret: None
+2022-05-09 19:41:31,720 INFO    MainThread:2131432 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 2
+  other_count: 3
+}
+pusher_stats {
+  uploaded_bytes: 97436
+  total_bytes: 121162
+}
+
+2022-05-09 19:41:32,000 INFO    MainThread:2131432 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 3
+}
+pusher_stats {
+  uploaded_bytes: 97436
+  total_bytes: 151415
+}
+
+2022-05-09 19:41:32,102 INFO    MainThread:2131432 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 3
+}
+pusher_stats {
+  uploaded_bytes: 97436
+  total_bytes: 151415
+}
+
+2022-05-09 19:41:32,203 INFO    MainThread:2131432 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 3
+}
+pusher_stats {
+  uploaded_bytes: 127689
+  total_bytes: 151415
+}
+
+2022-05-09 19:41:32,305 INFO    MainThread:2131432 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 3
+}
+pusher_stats {
+  uploaded_bytes: 127689
+  total_bytes: 151415
+}
+
+2022-05-09 19:41:32,406 INFO    MainThread:2131432 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 3
+}
+pusher_stats {
+  uploaded_bytes: 127689
+  total_bytes: 151415
+}
+
+2022-05-09 19:41:32,507 INFO    MainThread:2131432 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 3
+}
+pusher_stats {
+  uploaded_bytes: 127689
+  total_bytes: 151415
+}
+
+2022-05-09 19:41:33,498 INFO    MainThread:2131432 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 7
+  other_count: 3
+}
+pusher_stats {
+  uploaded_bytes: 127689
+  total_bytes: 151415
+}
+
+2022-05-09 19:41:33,717 INFO    MainThread:2131432 [wandb_run.py:_on_finish():1831] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 7
+  other_count: 3
+}
+pusher_stats {
+  uploaded_bytes: 127689
+  total_bytes: 151415
+}
+local_info {
+}
+
+2022-05-09 19:41:34,822 INFO    MainThread:2131432 [wandb_run.py:_footer_history_summary_info():2865] rendering history
+2022-05-09 19:41:34,823 INFO    MainThread:2131432 [wandb_run.py:_footer_history_summary_info():2894] rendering summary
+2022-05-09 19:41:34,825 INFO    MainThread:2131432 [wandb_run.py:_footer_sync_info():2822] logging synced files

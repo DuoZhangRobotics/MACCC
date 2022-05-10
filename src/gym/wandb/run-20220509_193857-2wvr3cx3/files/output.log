@@ -1,0 +1,461 @@
+/home/duo/miniconda3/envs/networks/lib/python3.7/site-packages/gym/spaces/box.py:74: UserWarning: [33mWARN: Box bound precision lowered by casting to float32
+  "Box bound precision lowered by casting to {}".format(self.dtype)
+Architecture is: [32, 16]
+History length: 10
+Features: ['sent latency inflation', 'latency ratio', 'send ratio']
+Getting min obs for ['sent latency inflation', 'latency ratio', 'send ratio']
+gamma = 0.990000
+Using cuda device
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Reward: 0.00, Ewma Reward: 0.00
+Logging to ./log/2022-05-09-19_38_57/runs/2022-05-09-19_38_57/PPO_1
+Reward: -490.06, Ewma Reward: -4.90
+Reward: -593.96, Ewma Reward: -10.79
+Reward: -1150.77, Ewma Reward: -22.19
+Reward: -632.40, Ewma Reward: -28.29
+Reward: -3590.84, Ewma Reward: -63.92
+Reward: -828.43, Ewma Reward: -71.56
+Reward: -4516.38, Ewma Reward: -116.01
+Reward: -737.09, Ewma Reward: -122.22
+Reward: -732.54, Ewma Reward: -128.33
+Reward: -557.10, Ewma Reward: -132.61
+Reward: -512.57, Ewma Reward: -136.41
+Reward: -457.94, Ewma Reward: -139.63
+Reward: -2165.57, Ewma Reward: -159.89
+Reward: -859.13, Ewma Reward: -166.88
+Reward: -540.74, Ewma Reward: -170.62
+Reward: -531.78, Ewma Reward: -174.23
+Reward: -476.68, Ewma Reward: -177.25
+Reward: -654.19, Ewma Reward: -182.02
+Reward: -1394.24, Ewma Reward: -194.15
+Reward: 445.31, Ewma Reward: -187.75
+----------------------------------
+| rollout/           |           |
+|    ep_len_mean     | 400       |
+|    ep_rew_mean     | -1.05e+03 |
+| time/              |           |
+|    fps             | 559       |
+|    iterations      | 1         |
+|    time_elapsed    | 14        |
+|    total_timesteps | 8192      |
+----------------------------------
+Reward: -33.99, Ewma Reward: -186.21
+Reward: -517.55, Ewma Reward: -189.53
+Reward: -648.74, Ewma Reward: -194.12
+Reward: -133.53, Ewma Reward: -193.51
+Reward: -1384.15, Ewma Reward: -205.42
+Reward: -369.03, Ewma Reward: -207.06
+Reward: -885.00, Ewma Reward: -213.84
+Reward: -540.65, Ewma Reward: -217.10
+Reward: -488.86, Ewma Reward: -219.82
+Reward: -510.72, Ewma Reward: -222.73
+Reward: -872.87, Ewma Reward: -229.23
+Reward: -590.29, Ewma Reward: -232.84
+Reward: -700.44, Ewma Reward: -237.52
+Reward: -542.18, Ewma Reward: -240.57
+Reward: -576.74, Ewma Reward: -243.93
+Reward: -542.31, Ewma Reward: -246.91
+Reward: -492.77, Ewma Reward: -249.37
+Reward: -1512.45, Ewma Reward: -262.00
+Reward: -873.49, Ewma Reward: -268.11
+Reward: -1099.40, Ewma Reward: -276.43
+-------------------------------------------
+| rollout/                |               |
+|    ep_len_mean          | 400           |
+|    ep_rew_mean          | -857          |
+| time/                   |               |
+|    fps                  | 583           |
+|    iterations           | 2             |
+|    time_elapsed         | 28            |
+|    total_timesteps      | 16384         |
+| train/                  |               |
+|    approx_kl            | 0.00085008424 |
+|    clip_fraction        | 3.66e-05      |
+|    clip_range           | 0.2           |
+|    entropy_loss         | -5.67         |
+|    explained_variance   | -0.00413      |
+|    learning_rate        | 0.0003        |
+|    loss                 | 2.3e+03       |
+|    n_updates            | 10            |
+|    policy_gradient_loss | -0.00145      |
+|    std                  | 0.999         |
+|    value_loss           | 4.48e+03      |
+-------------------------------------------
+Reward: -428.22, Ewma Reward: -277.95
+Reward: -494.55, Ewma Reward: -280.11
+Reward: -825.82, Ewma Reward: -285.57
+Reward: -168.59, Ewma Reward: -284.40
+Reward: -738.14, Ewma Reward: -288.94
+Reward: -441.24, Ewma Reward: -290.46
+Reward: -235.71, Ewma Reward: -289.91
+Reward: -346.04, Ewma Reward: -290.47
+Reward: -660.85, Ewma Reward: -294.18
+Reward: -577.22, Ewma Reward: -297.01
+Reward: -649.43, Ewma Reward: -300.53
+Reward: 165.30, Ewma Reward: -295.87
+Reward: -2204.81, Ewma Reward: -314.96
+Reward: -754.57, Ewma Reward: -319.36
+Reward: -522.07, Ewma Reward: -321.39
+Reward: -391.18, Ewma Reward: -322.08
+Reward: -655.46, Ewma Reward: -325.42
+Reward: -169.24, Ewma Reward: -323.86
+Reward: -458.45, Ewma Reward: -325.20
+Reward: -542.04, Ewma Reward: -327.37
+Reward: -4096.01, Ewma Reward: -365.06
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 400          |
+|    ep_rew_mean          | -811         |
+| time/                   |              |
+|    fps                  | 632          |
+|    iterations           | 3            |
+|    time_elapsed         | 38           |
+|    total_timesteps      | 24576        |
+| train/                  |              |
+|    approx_kl            | 0.0013617652 |
+|    clip_fraction        | 0.000549     |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -5.67        |
+|    explained_variance   | -0.00885     |
+|    learning_rate        | 0.0003       |
+|    loss                 | 502          |
+|    n_updates            | 20           |
+|    policy_gradient_loss | -0.00115     |
+|    std                  | 1            |
+|    value_loss           | 1.06e+03     |
+------------------------------------------
+Reward: -24.81, Ewma Reward: -361.65
+Reward: -101.72, Ewma Reward: -359.05
+Reward: -36.49, Ewma Reward: -355.83
+Reward: -287.44, Ewma Reward: -355.15
+Reward: -438.59, Ewma Reward: -355.98
+Reward: -856.34, Ewma Reward: -360.98
+Reward: -971.54, Ewma Reward: -367.09
+Reward: -605.79, Ewma Reward: -369.48
+Reward: -1255.32, Ewma Reward: -378.33
+Reward: 137.55, Ewma Reward: -373.18
+Reward: -2550.72, Ewma Reward: -394.95
+Reward: -469.36, Ewma Reward: -395.70
+Reward: -338.29, Ewma Reward: -395.12
+Reward: -499.65, Ewma Reward: -396.17
+Reward: -419.10, Ewma Reward: -396.40
+Reward: 287.63, Ewma Reward: -389.56
+Reward: 574.66, Ewma Reward: -379.91
+Reward: -1761.02, Ewma Reward: -393.72
+Reward: -796.42, Ewma Reward: -397.75
+Reward: -286.70, Ewma Reward: -396.64
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 400          |
+|    ep_rew_mean          | -743         |
+| time/                   |              |
+|    fps                  | 643          |
+|    iterations           | 4            |
+|    time_elapsed         | 50           |
+|    total_timesteps      | 32768        |
+| train/                  |              |
+|    approx_kl            | 0.0002201839 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -5.68        |
+|    explained_variance   | -0.00261     |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.13e+03     |
+|    n_updates            | 30           |
+|    policy_gradient_loss | -0.000659    |
+|    std                  | 1            |
+|    value_loss           | 2.3e+03      |
+------------------------------------------
+Reward: -496.43, Ewma Reward: -397.64
+Reward: -234.75, Ewma Reward: -396.01
+Reward: -3005.50, Ewma Reward: -422.10
+Reward: -997.75, Ewma Reward: -427.86
+Reward: -1049.85, Ewma Reward: -434.08
+Reward: -965.45, Ewma Reward: -439.39
+Reward: -2124.55, Ewma Reward: -456.25
+Reward: -328.34, Ewma Reward: -454.97
+Reward: 76.34, Ewma Reward: -449.65
+Reward: -545.64, Ewma Reward: -450.61
+Reward: -1789.99, Ewma Reward: -464.01
+Reward: -483.66, Ewma Reward: -464.20
+Reward: -1681.50, Ewma Reward: -476.38
+Reward: -595.60, Ewma Reward: -477.57
+Reward: -1301.04, Ewma Reward: -485.80
+Reward: -429.04, Ewma Reward: -485.24
+Reward: -770.96, Ewma Reward: -488.09
+Reward: -343.84, Ewma Reward: -486.65
+Reward: -1851.98, Ewma Reward: -500.30
+Reward: -569.74, Ewma Reward: -501.00
+Reward: -1048.24, Ewma Reward: -506.47
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 400          |
+|    ep_rew_mean          | -796         |
+| time/                   |              |
+|    fps                  | 567          |
+|    iterations           | 5            |
+|    time_elapsed         | 72           |
+|    total_timesteps      | 40960        |
+| train/                  |              |
+|    approx_kl            | 0.0008752317 |
+|    clip_fraction        | 7.32e-05     |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -5.68        |
+|    explained_variance   | -0.012       |
+|    learning_rate        | 0.0003       |
+|    loss                 | 691          |
+|    n_updates            | 40           |
+|    policy_gradient_loss | -0.00133     |
+|    std                  | 1            |
+|    value_loss           | 1.38e+03     |
+------------------------------------------
+Reward: -595.43, Ewma Reward: -507.36
+Reward: -460.12, Ewma Reward: -506.89
+Reward: -510.78, Ewma Reward: -506.93
+Reward: -398.88, Ewma Reward: -505.85
+Reward: -566.74, Ewma Reward: -506.46
+Reward: -661.81, Ewma Reward: -508.01
+Reward: -1417.66, Ewma Reward: -517.11
+Reward: -547.89, Ewma Reward: -517.41
+Reward: -153.30, Ewma Reward: -513.77
+Reward: -570.33, Ewma Reward: -514.34
+Reward: -552.64, Ewma Reward: -514.72
+Reward: -203.82, Ewma Reward: -511.61
+Reward: -340.55, Ewma Reward: -509.90
+Reward: -572.68, Ewma Reward: -510.53
+Reward: -356.47, Ewma Reward: -508.99
+Reward: -135.43, Ewma Reward: -505.25
+Reward: -3035.15, Ewma Reward: -530.55
+Reward: -2747.90, Ewma Reward: -552.73
+Reward: -454.51, Ewma Reward: -551.74
+Reward: -939.62, Ewma Reward: -555.62
+-------------------------------------------
+| rollout/                |               |
+|    ep_len_mean          | 400           |
+|    ep_rew_mean          | -744          |
+| time/                   |               |
+|    fps                  | 577           |
+|    iterations           | 6             |
+|    time_elapsed         | 85            |
+|    total_timesteps      | 49152         |
+| train/                  |               |
+|    approx_kl            | 0.00031279915 |
+|    clip_fraction        | 0             |
+|    clip_range           | 0.2           |
+|    entropy_loss         | -5.69         |
+|    explained_variance   | -0.0115       |
+|    learning_rate        | 0.0003        |
+|    loss                 | 1.3e+03       |
+|    n_updates            | 50            |
+|    policy_gradient_loss | -0.000884     |
+|    std                  | 1             |
+|    value_loss           | 2.55e+03      |
+-------------------------------------------
+Reward: -1369.62, Ewma Reward: -563.76
+Reward: -518.36, Ewma Reward: -563.31
+Reward: -546.86, Ewma Reward: -563.14
+Reward: -731.83, Ewma Reward: -564.83
+Reward: -339.69, Ewma Reward: -562.58
+Reward: -441.41, Ewma Reward: -561.37
+Reward: -298.87, Ewma Reward: -558.74
+Reward: -1769.86, Ewma Reward: -570.85
+Reward: -483.16, Ewma Reward: -569.98
+Reward: -594.16, Ewma Reward: -570.22
+Reward: -537.02, Ewma Reward: -569.89
+Reward: -310.51, Ewma Reward: -567.29
+Reward: -104.33, Ewma Reward: -562.66
+Reward: -333.48, Ewma Reward: -560.37
+Reward: -424.60, Ewma Reward: -559.01
+Reward: -3988.50, Ewma Reward: -593.31
+Reward: -489.33, Ewma Reward: -592.27
+Reward: -25.54, Ewma Reward: -586.60
+Reward: -1439.47, Ewma Reward: -595.13
+Reward: -286.20, Ewma Reward: -592.04
+Reward: -317.97, Ewma Reward: -589.30
+-------------------------------------------
+| rollout/                |               |
+|    ep_len_mean          | 400           |
+|    ep_rew_mean          | -753          |
+| time/                   |               |
+|    fps                  | 591           |
+|    iterations           | 7             |
+|    time_elapsed         | 96            |
+|    total_timesteps      | 57344         |
+| train/                  |               |
+|    approx_kl            | 0.00068651914 |
+|    clip_fraction        | 0             |
+|    clip_range           | 0.2           |
+|    entropy_loss         | -5.69         |
+|    explained_variance   | -0.00842      |
+|    learning_rate        | 0.0003        |
+|    loss                 | 1.12e+03      |
+|    n_updates            | 60            |
+|    policy_gradient_loss | -0.0012       |
+|    std                  | 1.01          |
+|    value_loss           | 2.17e+03      |
+-------------------------------------------
+Reward: -635.64, Ewma Reward: -589.76
+Reward: -1690.84, Ewma Reward: -600.77
+Reward: -377.78, Ewma Reward: -598.54
+Reward: -374.35, Ewma Reward: -596.30
+Reward: -2153.51, Ewma Reward: -611.87
+Reward: -709.96, Ewma Reward: -612.86
+Reward: -488.53, Ewma Reward: -611.61
+Reward: -894.37, Ewma Reward: -614.44
+Reward: -304.04, Ewma Reward: -611.34
+Reward: -211.16, Ewma Reward: -607.33
+Reward: -447.77, Ewma Reward: -605.74
+Reward: -3506.65, Ewma Reward: -634.75
+Reward: -279.97, Ewma Reward: -631.20
+Reward: -42.90, Ewma Reward: -625.32
+Reward: -477.26, Ewma Reward: -623.84
+Reward: -752.80, Ewma Reward: -625.13
+Reward: -1890.02, Ewma Reward: -637.77
+Reward: -585.62, Ewma Reward: -637.25
+Reward: -227.93, Ewma Reward: -633.16
+Reward: -441.69, Ewma Reward: -631.24
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 400          |
+|    ep_rew_mean          | -782         |
+| time/                   |              |
+|    fps                  | 581          |
+|    iterations           | 8            |
+|    time_elapsed         | 112          |
+|    total_timesteps      | 65536        |
+| train/                  |              |
+|    approx_kl            | 0.0007907116 |
+|    clip_fraction        | 7.32e-05     |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -5.7         |
+|    explained_variance   | -0.00336     |
+|    learning_rate        | 0.0003       |
+|    loss                 | 964          |
+|    n_updates            | 70           |
+|    policy_gradient_loss | -0.00119     |
+|    std                  | 1.01         |
+|    value_loss           | 2.06e+03     |
+------------------------------------------
+Reward: -515.68, Ewma Reward: -630.09
+Reward: -475.80, Ewma Reward: -628.55
+Reward: -1276.68, Ewma Reward: -635.03
+Reward: -307.28, Ewma Reward: -631.75
+Reward: -1043.22, Ewma Reward: -635.86
+Reward: -640.33, Ewma Reward: -635.91
+Reward: 261.38, Ewma Reward: -626.94
+Reward: -246.80, Ewma Reward: -623.14
+Reward: -232.39, Ewma Reward: -619.23
+Reward: -427.73, Ewma Reward: -617.31
+Reward: -223.10, Ewma Reward: -613.37
+Reward: -459.58, Ewma Reward: -611.83
+Reward: -1591.54, Ewma Reward: -621.63
+Reward: -33.98, Ewma Reward: -615.75
+Reward: -378.47, Ewma Reward: -613.38
+Reward: -503.82, Ewma Reward: -612.28
+Reward: -854.53, Ewma Reward: -614.71
+Reward: -1392.33, Ewma Reward: -622.48
+Reward: -528.87, Ewma Reward: -621.55
+Reward: -498.75, Ewma Reward: -620.32
+Reward: -445.78, Ewma Reward: -618.57
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 400          |
+|    ep_rew_mean          | -757         |
+| time/                   |              |
+|    fps                  | 593          |
+|    iterations           | 9            |
+|    time_elapsed         | 124          |
+|    total_timesteps      | 73728        |
+| train/                  |              |
+|    approx_kl            | 0.0002957288 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -5.7         |
+|    explained_variance   | -0.00175     |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.09e+03     |
+|    n_updates            | 80           |
+|    policy_gradient_loss | -0.000875    |
+|    std                  | 1.01         |
+|    value_loss           | 2.28e+03     |
+------------------------------------------
+Reward: -692.73, Ewma Reward: -619.32
+Reward: -1025.16, Ewma Reward: -623.37
+Reward: -175.39, Ewma Reward: -618.89
+Reward: -78.08, Ewma Reward: -613.49
+Reward: -470.91, Ewma Reward: -612.06
+Reward: -498.39, Ewma Reward: -610.92
+Reward: -261.45, Ewma Reward: -607.43
+Reward: -150.80, Ewma Reward: -602.86
+Reward: -2805.17, Ewma Reward: -624.89
+Reward: -2259.09, Ewma Reward: -641.23
+Reward: -183.08, Ewma Reward: -636.65
+Reward: -455.53, Ewma Reward: -634.83
+Reward: -567.63, Ewma Reward: -634.16
+Reward: -609.15, Ewma Reward: -633.91
+Reward: -168.00, Ewma Reward: -629.25
+Reward: -142.34, Ewma Reward: -624.38
+Reward: -414.72, Ewma Reward: -622.29
+Reward: -651.90, Ewma Reward: -622.58
+Reward: -537.40, Ewma Reward: -621.73
+Reward: -566.64, Ewma Reward: -621.18
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 400          |
+|    ep_rew_mean          | -705         |
+| time/                   |              |
+|    fps                  | 599          |
+|    iterations           | 10           |
+|    time_elapsed         | 136          |
+|    total_timesteps      | 81920        |
+| train/                  |              |
+|    approx_kl            | 0.0012387217 |
+|    clip_fraction        | 7.32e-05     |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -5.69        |
+|    explained_variance   | -0.011       |
+|    learning_rate        | 0.0003       |
+|    loss                 | 437          |
+|    n_updates            | 90           |
+|    policy_gradient_loss | -0.00114     |
+|    std                  | 1            |
+|    value_loss           | 859          |
+------------------------------------------
+Reward: -479.35, Ewma Reward: -619.76
+Reward: -500.19, Ewma Reward: -618.57
+Reward: -1282.48, Ewma Reward: -625.21
+Reward: -482.77, Ewma Reward: -623.78
+Reward: -135.94, Ewma Reward: -618.90
+Traceback (most recent call last):
+  File "stable_solve.py", line 105, in <module>
+    , callback=get_callbacks()
+  File "/home/duo/miniconda3/envs/networks/lib/python3.7/site-packages/stable_baselines3/ppo/ppo.py", line 313, in learn
+    reset_num_timesteps=reset_num_timesteps,
+  File "/home/duo/miniconda3/envs/networks/lib/python3.7/site-packages/stable_baselines3/common/on_policy_algorithm.py", line 250, in learn
+    continue_training = self.collect_rollouts(self.env, callback, self.rollout_buffer, n_rollout_steps=self.n_steps)
+  File "/home/duo/miniconda3/envs/networks/lib/python3.7/site-packages/stable_baselines3/common/on_policy_algorithm.py", line 178, in collect_rollouts
+    new_obs, rewards, dones, infos = env.step(clipped_actions)
+  File "/home/duo/miniconda3/envs/networks/lib/python3.7/site-packages/stable_baselines3/common/vec_env/base_vec_env.py", line 162, in step
+    return self.step_wait()
+  File "/home/duo/miniconda3/envs/networks/lib/python3.7/site-packages/stable_baselines3/common/vec_env/dummy_vec_env.py", line 44, in step_wait
+    self.actions[env_idx]
+  File "/home/duo/miniconda3/envs/networks/lib/python3.7/site-packages/stable_baselines3/common/monitor.py", line 90, in step
+    observation, reward, done, info = self.env.step(action)
+  File "/home/duo/miniconda3/envs/networks/lib/python3.7/site-packages/gym/wrappers/order_enforcing.py", line 11, in step
+    observation, reward, done, info = self.env.step(action)
+  File "/mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/network_sim.py", line 492, in step
+    sender_obs = self._get_all_sender_obs()
+  File "/mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/network_sim.py", line 470, in _get_all_sender_obs
+    sender_obs[str(i)]=self.senders[i].get_obs()
+  File "/mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/gym/network_sim.py", line 343, in get_obs
+    return self.history.as_array()
+  File "/mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/common/sender_obs.py", line 71, in as_array
+    arrays.append(mi.as_array(self.features))
+  File "/mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/common/sender_obs.py", line 54, in as_array
+    return np.array([self.get(f) / SenderMonitorIntervalMetric.get_by_name(f).scale for f in features])
+  File "/mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main/src/common/sender_obs.py", line 54, in <listcomp>
+    return np.array([self.get(f) / SenderMonitorIntervalMetric.get_by_name(f).scale for f in features])
+KeyboardInterrupt
+Reward: -487.29, Ewma Reward: -617.59
+Reward: -1349.63, Ewma Reward: -624.91

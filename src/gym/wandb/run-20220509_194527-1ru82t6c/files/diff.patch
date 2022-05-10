@@ -1,0 +1,427 @@
+diff --git a/environment.yml b/environment.yml
+index 48310d3..96562f0 100644
+--- a/environment.yml
++++ b/environment.yml
+@@ -15,5 +15,5 @@ dependencies:
+     - wandb
+     - gym
+     - stable-baselines3[extra]
+-    - tensorflow-gpu==1.15
+-    - stable-baselines[mpi]
++    # - tensorflow-gpu==1.15
++    # - stable-baselines[mpi]
+diff --git a/src/common/__pycache__/__init__.cpython-37.pyc b/src/common/__pycache__/__init__.cpython-37.pyc
+index d160f9f..3128cac 100644
+Binary files a/src/common/__pycache__/__init__.cpython-37.pyc and b/src/common/__pycache__/__init__.cpython-37.pyc differ
+diff --git a/src/common/__pycache__/config.cpython-37.pyc b/src/common/__pycache__/config.cpython-37.pyc
+index 466e933..a6f156e 100644
+Binary files a/src/common/__pycache__/config.cpython-37.pyc and b/src/common/__pycache__/config.cpython-37.pyc differ
+diff --git a/src/common/__pycache__/sender_obs.cpython-37.pyc b/src/common/__pycache__/sender_obs.cpython-37.pyc
+index e86e6d8..90daf4a 100644
+Binary files a/src/common/__pycache__/sender_obs.cpython-37.pyc and b/src/common/__pycache__/sender_obs.cpython-37.pyc differ
+diff --git a/src/common/__pycache__/simple_arg_parse.cpython-37.pyc b/src/common/__pycache__/simple_arg_parse.cpython-37.pyc
+index 44ae49f..a3d933d 100644
+Binary files a/src/common/__pycache__/simple_arg_parse.cpython-37.pyc and b/src/common/__pycache__/simple_arg_parse.cpython-37.pyc differ
+diff --git a/src/gym/__pycache__/network_sim.cpython-37.pyc b/src/gym/__pycache__/network_sim.cpython-37.pyc
+index 9b30e15..ee90055 100644
+Binary files a/src/gym/__pycache__/network_sim.cpython-37.pyc and b/src/gym/__pycache__/network_sim.cpython-37.pyc differ
+diff --git a/src/gym/graph_run.py b/src/gym/graph_run.py
+index a8db277..ca4f0a3 100644
+--- a/src/gym/graph_run.py
++++ b/src/gym/graph_run.py
+@@ -63,6 +63,6 @@ fair_axis.plot(time_data, fair_data)
+ fair_axis.set_ylabel("Fairness")
+ fair_axis.set_xlabel("Monitor Interval")
+ 
+-title = "Summary Graph with Cwnd and Upper bound for Latency and Loss Rate"
++title = "Summary Graph with Cwnd and Upper bound for Latency and Loss Rate and Fairness Control"
+ fig.suptitle(title)
+ fig.savefig(f"{title}.png", dpi=500)
+diff --git a/src/gym/network_sim.py b/src/gym/network_sim.py
+index 91dd0c8..e36d9e5 100644
+--- a/src/gym/network_sim.py
++++ b/src/gym/network_sim.py
+@@ -65,7 +65,8 @@ class Link():
+         self.queue_delay = 0.0
+         self.queue_delay_update_time = 0.0
+         self.max_queue_delay = queue_size / self.bw
+-
++        
++    
+     def get_cur_queue_delay(self, event_time):
+         return max(0.0, self.queue_delay - (event_time - self.queue_delay_update_time))
+ 
+@@ -99,7 +100,7 @@ class Link():
+         self.queue_delay_update_time = 0.0
+ 
+ class Network():
+-    def __init__(self, senders, links,payment_weight):
++    def __init__(self, senders, links, payment_weight):
+         self.q = []
+         self.cur_time = 0.0
+         self.senders = senders
+@@ -107,7 +108,19 @@ class Network():
+         self.payment_weight=payment_weight
+         self.links = links
+         self.queue_initial_packets()
+-
++        self.bw_stats = {}
++
++    def get_bw_stats_in_queue(self):
++        self.bw_stats = {}
++        for stat in self.q:
++            event_time, sender, event_type, next_hop, cur_latency, dropped = stat
++            if not dropped:
++                if sender.id in self.bw_stats.keys():
++                    self.bw_stats[sender.id] += 1
++                else:
++                    self.bw_stats[sender.id] = 1
++        return self.bw_stats
++        
+     def queue_initial_packets(self):
+         for sender in self.senders:
+             sender.register_network(self)
+@@ -183,15 +196,18 @@ class Network():
+ 
+         # sender_mi = self.senders[0].get_run_data()  # only compute 0
+         bandwidth=np.zeros(self.sender_num)
++        bw_stats = self.get_bw_stats_in_queue()
++        # print(f"bw_stats = {bw_stats}")
+         throughput=0.0
+         latency=0.0
+         loss=0.0
+         for i in range(self.sender_num):
+             sender_mi = self.senders[i].get_run_data()
+-            bandwidth[i] = sender_mi.get("send rate")
++            bandwidth[i] = bw_stats[i]
+             throughput += sender_mi.get("recv rate")
+             latency += sender_mi.get("avg latency")
+             loss += sender_mi.get("loss ratio")
++            
+         def NormalizeData(data):
+             # data = np.array(data)
+             return data/(sum(data)+1e-10)
+@@ -199,9 +215,9 @@ class Network():
+         bandwidth=NormalizeData(bandwidth)
+         # print(bandwidth)
+         def fair(p,b):
+-            # print(np.linalg.norm(b))
+             return np.dot(p, b) / (np.linalg.norm(p)*np.linalg.norm(b)+1e-10)
+-        fair_loss=(fair(self.payment_weight,bandwidth)-1)**2
++        
++        fair_loss=(fair(self.payment_weight, bandwidth)-1)**2
+         # print("bandwidth", bandwidth)
+         # print("latency", latency)
+         # print("fair_loss", fair_loss)
+@@ -218,7 +234,7 @@ class Network():
+         # Very high thpt
+         # reward = (10.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * latency - 2e3 * loss)
+         # reward = (8.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * (latency-MAX_LATENCY) - 2e3 * (loss - MAX_LOSS))
+-        reward = (8.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * (latency - MAX_LATENCY) - 2e3 * (loss - MAX_LOSS)) - 1e1 * fair_loss
++        reward = (20.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * (latency - MAX_LATENCY) - 2e3 * (loss - MAX_LOSS)) - 1e3 * fair_loss
+ 
+ 
+         # High thpt
+@@ -230,7 +246,7 @@ class Network():
+         #print("Reward = %f, thpt = %f, lat = %f, loss = %f" % (reward, throughput, latency, loss))
+         
+         #reward = (throughput / RATE_OBS_SCALE) * np.exp(-1 * (LATENCY_PENALTY * latency / LAT_OBS_SCALE + LOSS_PENALTY * loss))
+-        return reward * REWARD_SCALE,fair_loss,throughput,latency,loss
++        return reward * REWARD_SCALE, fair_loss, throughput,latency,loss
+ 
+ class Sender():
+     
+@@ -257,7 +273,7 @@ class Sender():
+     def __lt__(self, other):
+         return self.id < other.id
+ 
+-    _next_id = 1
++    _next_id = 0
+     def _get_next_id():
+         result = Sender._next_id
+         Sender._next_id += 1
+@@ -410,9 +426,16 @@ class SimulatedNetworkEnv(gym.Env):
+         self.last_rate = None
+ 
+         if USE_CWND:
+-            self.action_space = spaces.Box(np.array([-1e12, -1e12]), np.array([1e12, 1e12]), dtype=np.float32)
++            '''One sender case'''
++            # self.action_space = spaces.Box(np.array([-1e12, -1e12]), np.array([1e12, 1e12]), dtype=np.float32)
++            """ Multiple senders"""
++            self.action_space = spaces.Box(-1e12 * np.ones((2*self.sender_num)), 1e12 * np.ones((2*self.sender_num)))
+         else:
+-            self.action_space = spaces.Box(np.array([-1e12]), np.array([1e12]), dtype=np.float32)
++            '''One sender case'''
++            # self.action_space = spaces.Box(np.array([-1e12]), np.array([1e12]), dtype=np.float32)
++            '''Multiple senders case'''
++            self.action_space = spaces.Box(-1e12 * np.ones((self.sender_num)), 1e12 * np.ones((self.sender_num)))
++            
+                    
+ 
+         self.observation_space = None
+@@ -420,17 +443,17 @@ class SimulatedNetworkEnv(gym.Env):
+         single_obs_min_vec = sender_obs.get_min_obs_vector(self.features)
+         single_obs_max_vec = sender_obs.get_max_obs_vector(self.features)
+ 
+-
+-        # self.observation_space = spaces.Box(np.tile(single_obs_min_vec, self.history_len),
++        # boxes= {}
++        # for i in range(self.sender_num):
++        #     boxes[str(i)]=spaces.Box(np.tile(single_obs_min_vec, self.history_len),
+         #                                     np.tile(single_obs_max_vec, self.history_len),
+         #                                     dtype=np.float32)
+-        boxes= {}
+-        for i in range(self.sender_num):
+-            boxes[str(i)]=spaces.Box(np.tile(single_obs_min_vec, self.history_len),
+-                                            np.tile(single_obs_max_vec, self.history_len),
++
++        # self.observation_space = spaces.Dict(boxes)
++        self.observation_space = spaces.Box(np.tile(single_obs_min_vec, self.history_len * self.sender_num),
++                                            np.tile(single_obs_max_vec, self.history_len * self.sender_num),
+                                             dtype=np.float32)
+ 
+-        self.observation_space = spaces.Dict(boxes)
+         self.reward_sum = 0.0
+         self.reward_ewma = 0.0
+ 
+@@ -445,20 +468,22 @@ class SimulatedNetworkEnv(gym.Env):
+         sender_obs= {}
+         for i in range(self.sender_num):
+             sender_obs[str(i)]=self.senders[i].get_obs()
+-
++        obs = np.concatenate([*sender_obs.values()], axis=None)
++        # print(f'sender obs shape= {sender_obs["0"].shape}')
++        # print(f'obs = {obs.shape}')
+         # sender_obs = np.array(sender_obs)
+         # print("sender_obs",sender_obs)
+-        return sender_obs
++        return obs
++        # return sender_obs
+ 
+     def step(self, actions):
+-        #print("Actions: %s" % str(actions))
+-        #print(actions)
+-        for i in range(len(actions)):#len(actions)):
++        # print(actions)
++        for i in range(self.sender_num):#len(actions)):
+             #print("Updating rate for sender %d" % i)
+             action = actions
+-            self.senders[i].apply_rate_delta(action[0])
++            self.senders[i].apply_rate_delta(action[2*i])
+             if USE_CWND:
+-                self.senders[i].apply_cwnd_delta(action[1])
++                self.senders[i].apply_cwnd_delta(action[2*i+1])
+         #print("Running for %fs" % self.run_dur)
+         reward,fair_loss,throughput,latency,loss = self.net.run_for_dur(self.run_dur)
+         for sender in self.senders:
+@@ -512,11 +537,9 @@ class SimulatedNetworkEnv(gym.Env):
+         lat   = random.uniform(self.min_lat, self.max_lat)
+         queue = 1 + int(np.exp(random.uniform(self.min_queue, self.max_queue)))
+         loss  = random.uniform(self.min_loss, self.max_loss)
+-        #bw    = 200
+-        #lat   = 0.03
+-        #queue = 5
+-        #loss  = 0.00
+-        self.links = [Link(bw, lat, queue, loss), Link(bw, lat, queue, loss)]
++        self.links = [Link(bw, lat, queue, loss), 
++                    #   Link(bw, lat, queue, loss)
++                      ]
+         #self.senders = [Sender(0.3 * bw, [self.links[0], self.links[1]], 0, self.history_len)]
+         #self.senders = [Sender(random.uniform(0.2, 0.7) * bw, [self.links[0], self.links[1]], 0, self.history_len)]
+         # self.senders = [Sender(random.uniform(0.3, 1.5) * bw, [self.links[0], self.links[1]], 0, self.features, history_len=self.history_len)]
+@@ -535,12 +558,17 @@ class SimulatedNetworkEnv(gym.Env):
+         # print("payment_weight", self.payment_weight)
+         self.senders=[]
+         for i in range(self.sender_num):
+-            self.senders.append(Sender(self.payment_weight[i] * bw, [self.links[0], self.links[1]], 0, self.features,
++            self.senders.append(Sender(random.uniform(0.3, 1.5) * bw, 
++                                    #    [self.links[0], self.links[1]], 
++                                        self.links,
++                                       0, 
++                                       self.features,
+                                    history_len=self.history_len))
+         # print("len(self.senders)",len(self.senders))
+         self.run_dur = 3 * lat
+ 
+     def reset(self):
++        Sender._next_id = 0
+         self.steps_taken = 0
+         self.net.reset()
+         self.create_new_links_and_senders()
+@@ -570,6 +598,3 @@ class SimulatedNetworkEnv(gym.Env):
+             json.dump(self.event_record, f, indent=4)
+ 
+ register(id='PccNs-v0', entry_point='network_sim:SimulatedNetworkEnv')
+-# env = SimulatedNetworkEnv()
+-# env.step([1.0])
+-# env.step([1.0,1.0])
+\ No newline at end of file
+diff --git a/src/gym/stable_solve.py b/src/gym/stable_solve.py
+index 3c97b71..db8d857 100644
+--- a/src/gym/stable_solve.py
++++ b/src/gym/stable_solve.py
+@@ -14,16 +14,64 @@
+ import torch
+ import gym
+ import network_sim
+-import tensorflow as tf
+ 
+-from stable_baselines.common.policies import MlpPolicy
++# from stable_baselines.common.policies import MlpPolicy
+ # from stable_baselines3.common.policies import FeedForwardPolicy
+ from stable_baselines3.common.torch_layers import MlpExtractor
+ from stable_baselines3 import PPO
+ from stable_baselines3.common.policies import ActorCriticPolicy
++from stable_baselines3.common.callbacks import EvalCallback, CheckpointCallback, CallbackList
++from wandb.integration.sb3 import WandbCallback
++import wandb
+ import os
+ import sys
+ import inspect
++from datetime import datetime
++
++time = f'{datetime.now().strftime("%Y-%m-%d-%H_%M_%S")}'
++log_path = f"./log/{time}/"
++timesteps = 1600 * 410 * 50
++config = {
++    "total_timesteps": timesteps,
++    "env_name": 'PccNs-v0',
++} 
++run = wandb.init(
++        project=f"NetworkProject",
++        config=config,
++        sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
++        monitor_gym=True,  # auto-upload the videos of agents playing the game
++        save_code=True,  # optional
++        name=time
++    )    
++    
++def check_paths():
++    if not os.path.exists(log_path):
++        os.mkdir(log_path)
++    # if not os.path.exists(os.path.join(log_path, 'videos')):
++    #     os.mkdir(os.path.join(log_path, 'videos'))
++    # if os.path.exists(os.path.join(log_path, 'action.txt')):
++    #     os.remove(os.path.join(log_path, 'action.txt'))
++    if not os.path.exists(os.path.join(log_path, "models")):
++        os.mkdir(os.path.join(log_path, "models"))
++    if not os.path.exists(os.path.join(log_path, "runs")):
++        os.mkdir(os.path.join(log_path, "runs")) 
++        
++def get_callbacks():
++    eval_callback = EvalCallback(env, best_model_save_path=log_path,
++                             log_path=log_path, eval_freq=100,
++                             deterministic=True, render=False)
++    checkpoint_callback = CheckpointCallback(save_freq=100000, save_path=log_path)
++    wandb_callback = WandbCallback(
++                        # gradient_save_freq=1e4,
++                        model_save_path=os.path.join(log_path, f"models/{run.name}"),
++                        model_save_freq=1e3,
++                        verbose=2)
++    callback = CallbackList([checkpoint_callback, 
++                            #  eval_callback, 
++                             wandb_callback
++                             ])
++    return callback
++
+ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+ parentdir = os.path.dirname(currentdir)
+ sys.path.insert(0,parentdir)
+@@ -36,76 +84,33 @@ else:
+     arch = [int(layer_width) for layer_width in arch_str.split(",")]
+ print("Architecture is: %s" % str(arch))
+ 
+-training_sess = None
+-
+-# class MyMlpPolicy(FeedForwardPolicy):
+-#
+-#     def __init__(self, sess, ob_space, ac_space, n_env, n_steps, n_batch, reuse=False, **_kwargs):
+-#         super(MyMlpPolicy, self).__init__(sess, ob_space, ac_space, n_env, n_steps, n_batch, reuse, net_arch=[{"pi":arch, "vf":arch}],
+-#                                         feature_extraction="mlp", **_kwargs)
+-#         global training_sess
+-#         training_sess = sess
+-class MyMlpPolicy(MlpExtractor):
+-
+-    def __init__(self,feature_dim, net_arch:[{"pi":arch, "vf":arch}],activation_fn,device:"auto",**_kwargs):
+-        super(MyMlpPolicy, self).__init__(self,feature_dim,net_arch,activation_fn,device,**_kwargs)
+-        # global training_sess
+-        # training_sess = sess
+ env = gym.make('PccNs-v0')
+-#env = gym.make('CartPole-v0')
+-
++check_paths()
+ gamma = arg_or_default("--gamma", default=0.99)
+ print("gamma = %f" % gamma)
+ policy_kwargs = dict(net_arch=[{"pi":arch, "vf":arch}])
+-model = PPO("MultiInputPolicy",env,policy_kwargs=policy_kwargs, verbose=1, n_steps=8192, batch_size=2048, gamma=gamma,use_sde=False)
+-# model = PPO(MyMlpPolicy, env, verbose=1, schedule ='constant', timesteps_per_actorbatch=8192, optim_batchsize=2048, gamma=gamma)
+-for i in range(0, 6):
+-    # with model.graph.as_default():
+-        # saver = tf.train.Saver()
+-        # saver.save(training_sess, "./pcc_model_%d.ckpt" % i)
++model = PPO("MlpPolicy",
++            env,
++            policy_kwargs=policy_kwargs, 
++            verbose=1, 
++            n_steps=8192, 
++            batch_size=2048, 
++            gamma=gamma,
++            use_sde=False,
++            tensorboard_log=os.path.join(log_path, f"runs/{run.name}")
++            )
+ 
+-    model.learn(total_timesteps=(1600 * 410))
+-    # model.learn(total_timesteps=(16 * 410))
++# for i in range(0, 6):
++model.learn(total_timesteps=timesteps
++            , callback=get_callbacks()
++            )
++    
+ # Specify a path
+-PATH = "entire_model.pt"
+ # Save
+-torch.save(model.policy.state_dict(), PATH)
+-# loader = tf.train.import_meta_graph('./outdir/pcc_model_1.ckpt.meta')
+-# loader.restore(training_sess,tf.train.latest_checkpoint('./outdir/pcc_model_1.ckpt.data-00000-of-00001'))
+-# print("loader", loader)
+-##
+-#   Save the model to the location specified below.
+-##
+-# default_export_dir = "pcc_saved_models"
+-default_export_dir = "tmp"
+-export_dir = arg_or_default("--model-dir", default=default_export_dir)
+-print("export_dir",export_dir)
++torch.save(model.policy.state_dict(), os.path.join(log_path, 'best_model.pth'))
++run.finish()
++# default_export_dir = f"log/{time}"
++# export_dir = arg_or_default("--model-dir", default=default_export_dir)
++# print("export_dir",export_dir)
+ 
+ 
+-
+-# with model.graph.as_default():
+-#
+-#     pol = model.policy_pi#act_model
+-#
+-#     obs_ph = pol.obs_ph #Tensor
+-#     act = pol.deterministic_action
+-#     sampled_act = pol.action
+-#
+-#     obs_input = tf.saved_model.utils.build_tensor_info(obs_ph)
+-#     outputs_tensor_info = tf.saved_model.utils.build_tensor_info(act)
+-#     stochastic_act_tensor_info = tf.saved_model.utils.build_tensor_info(sampled_act)
+-#     signature = tf.saved_model.signature_def_utils.build_signature_def(
+-#         inputs={"ob":obs_input},
+-#         outputs={"act":outputs_tensor_info, "stochastic_act":stochastic_act_tensor_info},
+-#         method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME)
+-#
+-#     #"""
+-#     signature_map = {tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY:
+-#                      signature}
+-#
+-#     model_builder = tf.saved_model.builder.SavedModelBuilder(export_dir)
+-#     model_builder.add_meta_graph_and_variables(model.sess,
+-#         tags=[tf.saved_model.tag_constants.SERVING],
+-#         signature_def_map=signature_map,
+-#         clear_devices=True)
+-#     model_builder.save(as_text=True)

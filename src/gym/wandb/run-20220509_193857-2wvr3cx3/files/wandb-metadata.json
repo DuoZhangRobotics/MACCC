@@ -1,0 +1,24 @@
+{
+    "os": "Linux-5.8.0-53-generic-x86_64-with-debian-bullseye-sid",
+    "python": "3.7.11",
+    "heartbeatAt": "2022-05-09T23:38:57.965897",
+    "startedAt": "2022-05-09T23:38:57.400171",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpu_count": 1,
+    "cpu_count": 128,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "stable_solve.py",
+    "codePath": "src/gym/stable_solve.py",
+    "git": {
+        "remote": "git@github.com:Yuhao-Fan/MACC-main.git",
+        "commit": "80af09af26ebd258ff5921fa5c8d25f61ff700b6"
+    },
+    "email": "976539567@qq.com",
+    "root": "/mnt/ff7e01f4-89ad-40d7-a113-112e01c9fd93/duo/networks/MACC-main",
+    "host": "dl",
+    "username": "duo",
+    "executable": "/home/duo/miniconda3/envs/networks/bin/python"
+}

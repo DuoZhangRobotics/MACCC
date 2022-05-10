@@ -26,26 +26,28 @@ filename = sys.argv[1]
 data = {}
 with open(filename) as f:
     data = json.load(f)
-
+# print(data["Events"][1:])
 time_data = [float(event["Time"]) for event in data["Events"][1:]]
 rew_data = [float(event["Reward"]) for event in data["Events"][1:]]
-send_data = [float(event["Send Rate"]) for event in data["Events"][1:]]
-thpt_data = [float(event["Throughput"]) for event in data["Events"][1:]]
-latency_data = [float(event["Latency"]) for event in data["Events"][1:]]
-loss_data = [float(event["Loss Rate"]) for event in data["Events"][1:]]
+# send_data = [float(event["Send Rate"]) for event in data["Events"][1:]]
+thpt_data = [float(event["SumThroughput"]) for event in data["Events"][1:]]
+latency_data = [float(event["SumLatency"]) for event in data["Events"][1:]]
+loss_data = [float(event["SumLoss"]) for event in data["Events"][1:]]
+fair_data = [float(event["Fairness"]) for event in data["Events"][1:]]
 
 fig, axes = plt.subplots(5, figsize=(10, 12))
 rew_axis = axes[0]
-send_axis = axes[1]
-thpt_axis = axes[2]
-latency_axis = axes[3]
-loss_axis = axes[4]
+# send_axis = axes[1]
+thpt_axis = axes[1]
+latency_axis = axes[2]
+loss_axis = axes[3]
+fair_axis = axes[4]
 
 rew_axis.plot(time_data, rew_data)
 rew_axis.set_ylabel("Reward")
 
-send_axis.plot(time_data, send_data)
-send_axis.set_ylabel("Send Rate")
+# send_axis.plot(time_data, send_data)
+# send_axis.set_ylabel("Send Rate")
 
 thpt_axis.plot(time_data, thpt_data)
 thpt_axis.set_ylabel("Throughput")
@@ -55,8 +57,12 @@ latency_axis.set_ylabel("Latency")
 
 loss_axis.plot(time_data, loss_data)
 loss_axis.set_ylabel("Loss Rate")
-loss_axis.set_xlabel("Monitor Interval")
 
-title = "Summary Graph with Cwnd and Upper bound for Latency and Loss Rate"
+
+fair_axis.plot(time_data, fair_data)
+fair_axis.set_ylabel("Fairness")
+fair_axis.set_xlabel("Monitor Interval")
+
+title = "Summary Graph with Cwnd and Upper bound for Latency and Loss Rate and Fairness Control"
 fig.suptitle(title)
 fig.savefig(f"{title}.png", dpi=500)

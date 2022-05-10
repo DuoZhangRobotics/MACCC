@@ -65,7 +65,8 @@ class Link():
         self.queue_delay = 0.0
         self.queue_delay_update_time = 0.0
         self.max_queue_delay = queue_size / self.bw
-
+        
+    
     def get_cur_queue_delay(self, event_time):
         return max(0.0, self.queue_delay - (event_time - self.queue_delay_update_time))
 
@@ -99,13 +100,28 @@ class Link():
         self.queue_delay_update_time = 0.0
 
 class Network():
-    def __init__(self, senders, links):
+    def __init__(self, senders, links, payment_weight, reward_coefficients):
         self.q = []
         self.cur_time = 0.0
         self.senders = senders
+        self.sender_num=len(senders)
+        self.payment_weight=payment_weight
         self.links = links
         self.queue_initial_packets()
-
+        self.bw_stats = {}
+        self.reward_coefficients = reward_coefficients
+        
+    def get_bw_stats_in_queue(self):
+        self.bw_stats = {}
+        for stat in self.q:
+            event_time, sender, event_type, next_hop, cur_latency, dropped = stat
+            if not dropped:
+                if sender.id in self.bw_stats.keys():
+                    self.bw_stats[sender.id] += 1
+                else:
+                    self.bw_stats[sender.id] = 1
+        return self.bw_stats
+        
     def queue_initial_packets(self):
         for sender in self.senders:
             sender.register_network(self)
@@ -179,10 +195,34 @@ class Network():
             if push_new_event:
                 heapq.heappush(self.q, (new_event_time, sender, new_event_type, new_next_hop, new_latency, new_dropped))
 
-        sender_mi = self.senders[0].get_run_data()
-        throughput = sender_mi.get("recv rate")
-        latency = sender_mi.get("avg latency")
-        loss = sender_mi.get("loss ratio")
+        # sender_mi = self.senders[0].get_run_data()  # only compute 0
+        bandwidth=np.zeros(self.sender_num)
+        bw_stats = self.get_bw_stats_in_queue()
+        # print(f"bw_stats = {bw_stats}")
+        throughput=0.0
+        latency=0.0
+        loss=0.0
+        for i in range(self.sender_num):
+            sender_mi = self.senders[i].get_run_data()
+            bandwidth[i] = bw_stats[i]
+            throughput += sender_mi.get("recv rate")
+            latency += sender_mi.get("avg latency")
+            loss += sender_mi.get("loss ratio")
+            
+        def NormalizeData(data):
+            # data = np.array(data)
+            return data/(sum(data)+1e-10)
+
+        bandwidth=NormalizeData(bandwidth)
+        # print(bandwidth)
+        def fair(p,b):
+            return np.dot(p, b) / (np.linalg.norm(p)*np.linalg.norm(b)+1e-10)
+        
+        fair_loss=(fair(self.payment_weight, bandwidth)-1)**2
+        # print("bandwidth", bandwidth)
+        # print("latency", latency)
+        # print("fair_loss", fair_loss)
+
         bw_cutoff = self.links[0].bw * 0.8
         lat_cutoff = 2.0 * self.links[0].dl * 1.5
         loss_cutoff = 2.0 * self.links[0].lr * 1.5
@@ -194,8 +234,11 @@ class Network():
         
         # Very high thpt
         # reward = (10.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * latency - 2e3 * loss)
-        reward = (8.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * (latency-MAX_LATENCY) - 2e3 * (loss - MAX_LOSS))
-        
+        # reward = (8.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * (latency-MAX_LATENCY) - 2e3 * (loss - MAX_LOSS))
+
+        reward = self.reward_coefficients[0] * throughput / (8 * BYTES_PER_PACKET) - self.reward_coefficients[1] * (latency - MAX_LATENCY) - self.reward_coefficients[2] * (loss - MAX_LOSS) - self.reward_coefficients[3]* fair_loss
+            # reward = (10.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * (latency - MAX_LATENCY) - 2e3 * (loss - MAX_LOSS)) - 1e3 * fair_loss
+
         # High thpt
         #reward = REWARD_SCALE * (5.0 * throughput / RATE_OBS_SCALE - 1e3 * latency / LAT_OBS_SCALE - 2e3 * loss)
         
@@ -205,7 +248,7 @@ class Network():
         #print("Reward = %f, thpt = %f, lat = %f, loss = %f" % (reward, throughput, latency, loss))
         
         #reward = (throughput / RATE_OBS_SCALE) * np.exp(-1 * (LATENCY_PENALTY * latency / LAT_OBS_SCALE + LOSS_PENALTY * loss))
-        return reward * REWARD_SCALE
+        return reward * REWARD_SCALE, fair_loss, throughput,latency,loss
 
 class Sender():
     
@@ -229,7 +272,10 @@ class Sender():
                                                 self.features, self.id)
         self.cwnd = cwnd
 
-    _next_id = 1
+    def __lt__(self, other):
+        return self.id < other.id
+
+    _next_id = 0
     def _get_next_id():
         result = Sender._next_id
         Sender._next_id += 1
@@ -345,19 +391,23 @@ class Sender():
                                                 self.features, self.id)
 
 class SimulatedNetworkEnv(gym.Env):
-    
     def __init__(self,
                  history_len=arg_or_default("--history-len", default=10),
                  features=arg_or_default("--input-features",
                     default="sent latency inflation,"
                           + "latency ratio,"
-                          + "send ratio")):
+                          + "send ratio"),
+                 num_senders = 2,
+                 num_links = 1,
+                 reward_coefficients = [20, 1e3, 2e3, 1e3], 
+                 log_path = None):
+        self.reward_coefficients = reward_coefficients
         self.viewer = None
         self.rand = None
-
+        self.log_path = log_path
         self.min_bw, self.max_bw = (100, 500)
         self.min_lat, self.max_lat = (0.05, 0.5)
-        self.min_queue, self.max_queue = (0, 8)
+        self.min_queue, self.max_queue = (0, 500)
         self.min_loss, self.max_loss = (0.0, 0.05)
         self.history_len = history_len
         print("History length: %d" % history_len)
@@ -366,8 +416,14 @@ class SimulatedNetworkEnv(gym.Env):
 
         self.links = None
         self.senders = None
+
+        # self.keys=2
+        self.sender_num = num_senders
+        self.link_num = num_links
+        self.payment_weight=None
+        self.min_price, self.max_price = (50, 100)
         self.create_new_links_and_senders()
-        self.net = Network(self.senders, self.links)
+        self.net = Network(self.senders, self.links,self.payment_weight, self.reward_coefficients)
         self.run_dur = None
         self.run_period = 0.1
         self.steps_taken = 0
@@ -377,17 +433,32 @@ class SimulatedNetworkEnv(gym.Env):
         self.last_rate = None
 
         if USE_CWND:
-            self.action_space = spaces.Box(np.array([-1e12, -1e12]), np.array([1e12, 1e12]), dtype=np.float32)
+            '''One sender case'''
+            # self.action_space = spaces.Box(np.array([-1e12, -1e12]), np.array([1e12, 1e12]), dtype=np.float32)
+            """ Multiple senders"""
+            self.action_space = spaces.Box(-1e12 * np.ones((2*self.sender_num)), 1e12 * np.ones((2*self.sender_num)))
         else:
-            self.action_space = spaces.Box(np.array([-1e12]), np.array([1e12]), dtype=np.float32)
+            '''One sender case'''
+            # self.action_space = spaces.Box(np.array([-1e12]), np.array([1e12]), dtype=np.float32)
+            '''Multiple senders case'''
+            self.action_space = spaces.Box(-1e12 * np.ones((self.sender_num)), 1e12 * np.ones((self.sender_num)))
+            
                    
 
         self.observation_space = None
         use_only_scale_free = True
         single_obs_min_vec = sender_obs.get_min_obs_vector(self.features)
         single_obs_max_vec = sender_obs.get_max_obs_vector(self.features)
-        self.observation_space = spaces.Box(np.tile(single_obs_min_vec, self.history_len),
-                                            np.tile(single_obs_max_vec, self.history_len),
+
+        # boxes= {}
+        # for i in range(self.sender_num):
+        #     boxes[str(i)]=spaces.Box(np.tile(single_obs_min_vec, self.history_len),
+        #                                     np.tile(single_obs_max_vec, self.history_len),
+        #                                     dtype=np.float32)
+
+        # self.observation_space = spaces.Dict(boxes)
+        self.observation_space = spaces.Box(np.tile(single_obs_min_vec, self.history_len * self.sender_num),
+                                            np.tile(single_obs_max_vec, self.history_len * self.sender_num),
                                             dtype=np.float32)
 
         self.reward_sum = 0.0
@@ -401,44 +472,58 @@ class SimulatedNetworkEnv(gym.Env):
         return [seed]
 
     def _get_all_sender_obs(self):
-        sender_obs = self.senders[0].get_obs()
-        sender_obs = np.array(sender_obs).reshape(-1,)
-        #print(sender_obs)
-        return sender_obs
+        sender_obs= {}
+        for i in range(self.sender_num):
+            sender_obs[str(i)]=self.senders[i].get_obs()
+        obs = np.concatenate([*sender_obs.values()], axis=None)
+        # print(f'sender obs shape= {sender_obs["0"].shape}')
+        # print(f'obs = {obs.shape}')
+        # sender_obs = np.array(sender_obs)
+        # print("sender_obs",sender_obs)
+        return obs
+        # return sender_obs
 
     def step(self, actions):
-        #print("Actions: %s" % str(actions))
-        #print(actions)
-        for i in range(0, 1):#len(actions)):
+        # print(actions)
+        for i in range(self.sender_num):#len(actions)):
             #print("Updating rate for sender %d" % i)
             action = actions
-            self.senders[i].apply_rate_delta(action[0])
+            self.senders[i].apply_rate_delta(action[2*i])
             if USE_CWND:
-                self.senders[i].apply_cwnd_delta(action[1])
+                self.senders[i].apply_cwnd_delta(action[2*i+1])
         #print("Running for %fs" % self.run_dur)
-        reward = self.net.run_for_dur(self.run_dur)
+        reward,fair_loss,throughput,latency,loss = self.net.run_for_dur(self.run_dur)
         for sender in self.senders:
             sender.record_run()
         self.steps_taken += 1
         sender_obs = self._get_all_sender_obs()
-        sender_mi = self.senders[0].get_run_data()
         event = {}
         event["Name"] = "Step"
         event["Time"] = self.steps_taken
         event["Reward"] = reward
-        #event["Target Rate"] = sender_mi.target_rate
-        event["Send Rate"] = sender_mi.get("send rate")
-        event["Throughput"] = sender_mi.get("recv rate")
-        event["Latency"] = sender_mi.get("avg latency")
-        event["Loss Rate"] = sender_mi.get("loss ratio")
-        event["Latency Inflation"] = sender_mi.get("sent latency inflation")
-        event["Latency Ratio"] = sender_mi.get("latency ratio")
-        event["Send Ratio"] = sender_mi.get("send ratio")
+        event["Fairness"] = fair_loss
+        event["SumThroughput"] = throughput
+        event["SumLatency"] = latency
+        event["SumLoss"] = loss
+        event["Other"]=[]
+        for i in range(self.sender_num):
+            sender_mi = self.senders[i].get_run_data()
+            event["Other"].append({})
+            events=event["Other"]
+            #event["Target Rate"] = sender_mi.target_rate
+            events[i]["Send Rate"] = sender_mi.get("send rate")
+            events[i]["Throughput"] = sender_mi.get("recv rate")
+            events[i]["Latency"] = sender_mi.get("avg latency")
+            events[i]["Loss Rate"] = sender_mi.get("loss ratio")
+            events[i]["Latency Inflation"] = sender_mi.get("sent latency inflation")
+            events[i]["Latency Ratio"] = sender_mi.get("latency ratio")
+            events[i]["Send Ratio"] = sender_mi.get("send ratio")
         #event["Cwnd"] = sender_mi.cwnd
         #event["Cwnd Used"] = sender_mi.cwnd_used
         self.event_record["Events"].append(event)
-        if event["Latency"] > 0.0:
-            self.run_dur = 0.5 * sender_mi.get("avg latency")
+        if event["SumLatency"] > 0.0:
+            self.run_dur = 0.5 * event["SumLatency"]/self.sender_num
+            # self.run_dur = 0.5 * sender_mi.get("avg latency")
         #print("Sender obs: %s" % sender_obs)
 
         should_stop = False
@@ -459,24 +544,44 @@ class SimulatedNetworkEnv(gym.Env):
         lat   = random.uniform(self.min_lat, self.max_lat)
         queue = 1 + int(np.exp(random.uniform(self.min_queue, self.max_queue)))
         loss  = random.uniform(self.min_loss, self.max_loss)
-        #bw    = 200
-        #lat   = 0.03
-        #queue = 5
-        #loss  = 0.00
-        self.links = [Link(bw, lat, queue, loss), Link(bw, lat, queue, loss)]
+        self.links = [Link(bw, lat, queue, loss) for i in range(self.link_num)]
         #self.senders = [Sender(0.3 * bw, [self.links[0], self.links[1]], 0, self.history_len)]
         #self.senders = [Sender(random.uniform(0.2, 0.7) * bw, [self.links[0], self.links[1]], 0, self.history_len)]
-        self.senders = [Sender(random.uniform(0.3, 1.5) * bw, [self.links[0], self.links[1]], 0, self.features, history_len=self.history_len)]
+        # self.senders = [Sender(random.uniform(0.3, 1.5) * bw, [self.links[0], self.links[1]], 0, self.features, history_len=self.history_len)]
+                        # rate                              ,  path                         , dest, features, cwnd = 25, history_len = 10
+        self.payment_weight =[]
+        for i in range(self.sender_num):
+            price=random.uniform(self.min_price, self.max_price)
+            self.payment_weight.append(price)
+
+        def NormalizeData(data):
+            data = np.array(data)
+            return data/sum(data)
+
+        # print("payment_weight", self.payment_weight)
+        self.payment_weight = NormalizeData(self.payment_weight)
+        # print("payment_weight", self.payment_weight)
+        self.senders=[]
+        for i in range(self.sender_num):
+            self.senders.append(Sender(random.uniform(0.3, 1.5) * bw, 
+                                    #    [self.links[0], self.links[1]], 
+                                        self.links,
+                                       0, 
+                                       self.features,
+                                   history_len=self.history_len))
+        # print("len(self.senders)",len(self.senders))
         self.run_dur = 3 * lat
 
     def reset(self):
+        Sender._next_id = 0
         self.steps_taken = 0
         self.net.reset()
         self.create_new_links_and_senders()
-        self.net = Network(self.senders, self.links)
+        self.net = Network(self.senders, self.links,self.payment_weight)
         self.episodes_run += 1
         if self.episodes_run > 0 and self.episodes_run % 100 == 0:
-            self.dump_events_to_file("pcc_env_log_run_%d.json" % self.episodes_run)
+            # self.dump_events_to_file("pcc_env_log_run_%d.json" % self.episodes_run)
+            self.dump_events_to_file(os.path.join(self.log_path, f"pcc_env_log_run_{self.episodes_run}.json"))
         self.event_record = {"Events":[]}
         self.net.run_for_dur(self.run_dur)
         self.net.run_for_dur(self.run_dur)
@@ -499,5 +604,3 @@ class SimulatedNetworkEnv(gym.Env):
             json.dump(self.event_record, f, indent=4)
 
 register(id='PccNs-v0', entry_point='network_sim:SimulatedNetworkEnv')
-#env = SimulatedNetworkEnv()
-#env.step([1.0])

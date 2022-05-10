@@ -15,5 +15,5 @@ dependencies:
     - wandb
     - gym
     - stable-baselines3[extra]
-    - tensorflow-gpu==1.15
-    - stable-baselines[mpi]
+    # - tensorflow-gpu==1.15
+    # - stable-baselines[mpi]
