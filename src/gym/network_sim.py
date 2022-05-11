@@ -100,7 +100,7 @@ class Link():
         self.queue_delay_update_time = 0.0
 
 class Network():
-    def __init__(self, senders, links, payment_weight, reward_coefficients):
+    def __init__(self, senders, links, payment_weight, reward_coefficients, use_Pcc_reward):
         self.q = []
         self.cur_time = 0.0
         self.senders = senders
@@ -110,6 +110,7 @@ class Network():
         self.queue_initial_packets()
         self.bw_stats = {}
         self.reward_coefficients = reward_coefficients
+        self.use_Pcc_reward = use_Pcc_reward
         
     def get_bw_stats_in_queue(self):
         self.bw_stats = {}
@@ -233,10 +234,11 @@ class Network():
         #reward = REWARD_SCALE * (20.0 * throughput / RATE_OBS_SCALE - 1e3 * latency / LAT_OBS_SCALE - 2e3 * loss)
         
         # Very high thpt
-        # reward = (10.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * latency - 2e3 * loss)
+        if self.use_Pcc_reward: 
+            reward = (10.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * latency - 2e3 * loss)
         # reward = (8.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * (latency-MAX_LATENCY) - 2e3 * (loss - MAX_LOSS))
-
-        reward = self.reward_coefficients[0] * throughput / (8 * BYTES_PER_PACKET) - self.reward_coefficients[1] * (latency - MAX_LATENCY) - self.reward_coefficients[2] * (loss - MAX_LOSS) - self.reward_coefficients[3]* fair_loss
+        else:
+            reward = self.reward_coefficients[0] * throughput / (8 * BYTES_PER_PACKET) - self.reward_coefficients[1] * (latency - MAX_LATENCY) - self.reward_coefficients[2] * (loss - MAX_LOSS) - self.reward_coefficients[3]* fair_loss
             # reward = (10.0 * throughput / (8 * BYTES_PER_PACKET) - 1e3 * (latency - MAX_LATENCY) - 2e3 * (loss - MAX_LOSS)) - 1e3 * fair_loss
 
         # High thpt
@@ -400,14 +402,16 @@ class SimulatedNetworkEnv(gym.Env):
                  num_senders = 2,
                  num_links = 1,
                  reward_coefficients = [20, 1e3, 2e3, 1e3], 
-                 log_path = None):
+                 log_path = None,
+                 PCC_reward = False):
         self.reward_coefficients = reward_coefficients
+        self.use_Pcc_reward = PCC_reward
         self.viewer = None
         self.rand = None
         self.log_path = log_path
         self.min_bw, self.max_bw = (100, 500)
         self.min_lat, self.max_lat = (0.05, 0.5)
-        self.min_queue, self.max_queue = (0, 500)
+        self.min_queue, self.max_queue = (0, 8)
         self.min_loss, self.max_loss = (0.0, 0.05)
         self.history_len = history_len
         print("History length: %d" % history_len)
@@ -423,7 +427,7 @@ class SimulatedNetworkEnv(gym.Env):
         self.payment_weight=None
         self.min_price, self.max_price = (50, 100)
         self.create_new_links_and_senders()
-        self.net = Network(self.senders, self.links,self.payment_weight, self.reward_coefficients)
+        self.net = Network(self.senders, self.links,self.payment_weight, self.reward_coefficients, self.use_Pcc_reward)
         self.run_dur = None
         self.run_period = 0.1
         self.steps_taken = 0
@@ -577,7 +581,7 @@ class SimulatedNetworkEnv(gym.Env):
         self.steps_taken = 0
         self.net.reset()
         self.create_new_links_and_senders()
-        self.net = Network(self.senders, self.links,self.payment_weight)
+        self.net = Network(self.senders, self.links,self.payment_weight, self.reward_coefficients, self.use_Pcc_reward)
         self.episodes_run += 1
         if self.episodes_run > 0 and self.episodes_run % 100 == 0:
             # self.dump_events_to_file("pcc_env_log_run_%d.json" % self.episodes_run)
