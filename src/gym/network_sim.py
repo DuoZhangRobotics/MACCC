@@ -492,9 +492,13 @@ class SimulatedNetworkEnv(gym.Env):
         for i in range(self.sender_num):#len(actions)):
             #print("Updating rate for sender %d" % i)
             action = actions
-            self.senders[i].apply_rate_delta(action[2*i])
+            
             if USE_CWND:
+                self.senders[i].apply_rate_delta(action[2*i])
                 self.senders[i].apply_cwnd_delta(action[2*i+1])
+            else:
+                self.senders[i].apply_rate_delta(action[i])
+                
         #print("Running for %fs" % self.run_dur)
         reward,fair_loss,throughput,latency,loss = self.net.run_for_dur(self.run_dur)
         for sender in self.senders:
@@ -584,7 +588,6 @@ class SimulatedNetworkEnv(gym.Env):
         self.net = Network(self.senders, self.links,self.payment_weight, self.reward_coefficients, self.use_Pcc_reward)
         self.episodes_run += 1
         if self.episodes_run > 0 and self.episodes_run % 100 == 0:
-            # self.dump_events_to_file("pcc_env_log_run_%d.json" % self.episodes_run)
             self.dump_events_to_file(os.path.join(self.log_path, f"pcc_env_log_run_{self.episodes_run}.json"))
         self.event_record = {"Events":[]}
         self.net.run_for_dur(self.run_dur)
