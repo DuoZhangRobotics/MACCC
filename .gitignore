@@ -8,3 +8,6 @@ src/gym/log/
 log/
 src/gym/success_trial/
 src/gym/wandb
+src/gym/__pycache__
+src/gym/test
+

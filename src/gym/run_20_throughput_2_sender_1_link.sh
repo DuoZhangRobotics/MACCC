@@ -1,0 +1,1 @@
+python stable_solve.py --num_senders 2 --throughput_coefficient 20
