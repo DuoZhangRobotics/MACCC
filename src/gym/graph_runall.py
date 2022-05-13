@@ -30,7 +30,7 @@ with open(filename) as f:
 time_data = [float(event["Time"]) for event in data["Events"][1:]]
 rew_data = [float(event["Reward"]) for event in data["Events"][1:]]
 # send_data = [float(event["Send Rate"]) for event in data["Events"][1:]]
-thpt_data = [float(event["SumThroughput"]) for event in data["Events"][1:]]
+thpt_data = [float(event["SumThroughput"]) if float(event["SumThroughput"])>=0 else 0 for event in data["Events"][1:]]
 latency_data = [float(event["SumLatency"]) for event in data["Events"][1:]]
 loss_data = [float(event["SumLoss"]) for event in data["Events"][1:]]
 fair_data = [float(event["Fairness"]) for event in data["Events"][1:]]
@@ -39,7 +39,7 @@ thpt_all = []
 loss_all = []
 lat_all = []
 for i in range(len(data["Events"][1]["Other"])): 
-    tmp_thpt = [float(event["Other"][i]["Throughput"]) for event in data["Events"][1:]]
+    tmp_thpt = [float(event["Other"][i]["Throughput"]) if float(event["Other"][i]["Throughput"]) >= 0 else 0 for event in data["Events"][1:]]
     thpt_all.append(tmp_thpt)
 # second_thpt = [float(event["Other"][1]["Throughput"]) for event in data["Events"][1:]]
     tmp_lat = [float(event["Other"][i]["Latency"]) for event in data["Events"][1:]]
@@ -72,7 +72,7 @@ for i in range(len(data["Events"][1]["Other"])):
 thpt_axis.legend(bbox_to_anchor=(0.85, 1), loc='upper left', borderaxespad=0.)
 thpt_axis.set_ylabel("Throughput")
 
-latency_axis.plot(time_data, latency_data, label="All")
+latency_axis.plot(time_data, latency_data, linestyle='None',marker='None')
 for i in range(len(data["Events"][1]["Other"])): 
     latency_axis.plot(time_data, lat_all[i], label=f"Sender{i+1}")
 # latency_axis.plot(time_data, first_lat, label="Sender1")
@@ -81,7 +81,7 @@ latency_axis.legend(bbox_to_anchor=(0.85, 1), loc='upper left', borderaxespad=0.
 latency_axis.set_ylabel("Latency")
 
 
-loss_axis.plot(time_data, loss_data, label="All")
+loss_axis.plot(time_data, loss_data,linestyle='None',marker='None')
 for i in range(len(data["Events"][1]["Other"])): 
     loss_axis.plot(time_data, loss_all[i], label=f"Sender{i+1}")
 # loss_axis.plot(time_data, first_loss, label="Sender1")

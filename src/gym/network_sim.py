@@ -411,7 +411,7 @@ class SimulatedNetworkEnv(gym.Env):
         self.log_path = log_path
         self.min_bw, self.max_bw = (100, 500)
         self.min_lat, self.max_lat = (0.05, 0.5)
-        self.min_queue, self.max_queue = (0, 8)
+        self.min_queue, self.max_queue = (8, 30)
         self.min_loss, self.max_loss = (0.0, 0.05)
         self.history_len = history_len
         print("History length: %d" % history_len)
