@@ -51,9 +51,10 @@ env = gym.make('PccNs-v0',
                )
 
 if arguments.PCC == 1:
-    model = PPO.load('./log/Use_PCC_True_num_senders_1_num_links_1_throughput_coefficient_10.0_loss_coefficient_1000.0_latency_coefficient_2000.0_fairness_coefficient_0.0_timesteps_3936000_2022-05-10-19_27_54/models/best_model.zip', env=env)
+    model = PPO.load('./log/Use_PCC_True_num_senders_1_num_links_1_throughput_coefficient_10.0_loss_coefficient_1000.0_latency_coefficient_2000.0_fairness_coefficient_0.0_timesteps_3936000_2022-05-10-19_27_54/models/rl_model_3900000_steps.zip', env=env)
 else:
-    model = PPO.load('./log/Use_PCC_False_num_senders_1_num_links_1_throughput_coefficient_10.0_loss_coefficient_1000.0_latency_coefficient_2000.0_fairness_coefficient_0.0_timesteps_32800000_2022-05-10-18_49_48/models/rl_model_24000000_steps.zip', env=env)
+    # model = PPO.load('./log/Use_PCC_False_num_senders_1_num_links_1_throughput_coefficient_10.0_loss_coefficient_1000.0_latency_coefficient_2000.0_fairness_coefficient_0.0_timesteps_32800000_2022-05-10-18_49_48/models/rl_model_8000000_steps.zip', env=env)
+    model = PPO.load('./log/Use_PCC_False_num_senders_1_num_links_1_throughput_coefficient_10.0_loss_coefficient_1000.0_latency_coefficient_2000.0_fairness_coefficient_0.0_timesteps_32800000_2022-05-10-18_49_48/models/rl_model_12000000_steps.zip', env=env)
 
 obs = env.reset()
 
