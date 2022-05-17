@@ -1,26 +1,69 @@
-# PCC-RL
-Reinforcement learning resources for the Performance-oriented Congestion Control
-project.
+# MACC
+
+Multi-Agents Constrained Congestion Control
+
+Duo Zhang, Yuhao Fan
+
+Achieved dynamic congestion control over one with multiple senders and fairness control using Reinforcement Learning.
+
 
 ## Overview
 This repo contains the gym environment required for training reinforcement
-learning models used in the PCC project along with the Python module required to
-run RL models in the PCC UDT codebase found at github.com/PCCProject/PCC-Uspace.
+learning models used in the MACC project.
+
+We re-implemented the PCC-RL with stable-baselines3 and PyTorch.
+
+We collect the bandwidth share of each sender from the bottleneck queue of the link for the fairness control
+
+We developed better APIs for visualization and interactions with training(tensorboard and wandb)
+
 
 
 ## Training
-To run training only, go to ./src/gym/, install any missing requirements for
-stable\_solve.py and run that script. By default, this should replicate the
-model presented in A Reinforcement Learning Perspective on Internet Congestion
-Control, ICML 2019.
+1. Create the environment from the environment.yml file:
+```
+conda env create -f environment.yml
+```
+2. Activate the new environment: 
+```
+conda activate networks
+```
+3. Train: 
+```
+python src/gym/stable_solve.py 
+```
+### Arguments:
 
-## Testing Models
+--steps, type=int, default=1600 * 410 * 50, 
+Timesteps of model learning
 
-To test models in the real world (i.e., sending real packets into the Linux
-kernel and out onto a real or emulated network), download and install the PCC
-UDT code from github.com/PCCProject/PCC-Uspace. Follow the instructions in that
-repo for using congestion control algorithms with Python modules, and see
-./src/gym/online/README.md for additional instructions regarding testing or training models in the real world.
+--num_senders, type = int, default=1, 
+Sender numbers
 
-class Sender():
-    def __init__(self, rate, path, dest, features, cwnd=25, history_len=10):
+--num_links, type = int, default=1, 
+Links numbers
+
+--throughput_coefficient, type = float, default=20, 
+Reward function coefficient of throughtput part
+
+--loss_coefficient, type = float, default=1e3, 
+Reward function coefficient of loss rate part
+
+--latency_coefficient, type = float, default=2e3, 
+Reward function coefficient of latency part
+
+--fairness_coefficient, type = float, default=1e3, 
+Reward function coefficient of fairness part
+
+--PCC, type = int, default=0, 
+Whether use PCC reward function
+
+## Visualization
+1. Generate the result image
+```
+python src/gym/graph_runall.py
+```
+2. Generate the compare of result image
+```
+src/gym/compare.sh
+```
