@@ -1,4 +1,4 @@
-# MACC
+# MACCC
 
 Multi-Agents Constrained Congestion Control
 
